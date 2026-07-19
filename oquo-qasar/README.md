@@ -1,4 +1,13 @@
-# OQUO in QASAR (OQUO-QASAR)
+# OQUO in QASAR 
+
+**OQUO-QASAR** is the configuration of the Ontology QUality Ontology (OQUO) that serves as the data model of [QASAR](https://semantics.inf.um.es/qasar), a web-based platform for ontology quality assurance. It bundles the OQUO core with the extension modules of the quality frameworks integrated into QASAR, so that their heterogeneous outputs can be represented, queried, and compared within a single, shared model.
+
+OQUO provides the semantic definitions needed to describe quality models —based on metrics, characteristics, and sub-characteristics— together with the entities required to represent ontology evaluations, such as observations, measurements, scales, scale conversions, and issues. It reuses and aligns four existing ontologies (QMO, EVAL, OBOE, and IPO) in its core, and is extended by framework-specific modules that contribute the metrics of each tool.
+
+QASAR consolidates four independently developed frameworks —OQuaRE, HURON, OntoEnrich, and Evaluome— into a single quality assurance workflow. Because all of them describe their results using OQUO-QASAR, the metrics produced by OQuaRE, HURON, and OntoEnrich become interoperable and can be aggregated on a common scale, while their evaluations, versions, and detected issues are represented in a uniform way. This modular, framework-agnostic design means that integrating a new framework only requires adding a new extension module, without changing the shared core.
+
+This page describes the modular architecture of OQUO-QASAR and its modules, with examples of the RDF produced when each framework's metrics are applied to real ontologies.
+
 
 The OQUO-QASAR ontology is composed by 5 modules that follows the architecture described in the next figure:
 

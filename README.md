@@ -9,4 +9,4 @@ OQUO ([https://purl.org/oquo-core](https://purl.archive.org/oquo-core)) contains
   - The Issue Procedure Ontology (IPO) - [http://purl.org/ipo/core](http://purl.org/ipo/core)
 
 
-The OQUO model can be used for defining and integrating quality models that combines metrics from different quality evaluation frameworks. We provide an example of how to use [OQUO for that purpose in QASAR, a tool for ontology quality assurance](OQUO-QASAR.md)
+The OQUO model can be used for defining and integrating quality models that combines metrics from different quality evaluation frameworks. We provide an example of how to use [OQUO for that purpose in QASAR, a tool for ontology quality assurance](./oquo-qasar/README.md).
