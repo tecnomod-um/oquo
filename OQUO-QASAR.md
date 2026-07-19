@@ -2,7 +2,7 @@
 
 The OQUO-QASAR ontology is composed by 5 modules that follows the architecture described in the next figure:
 
-<img src="assets/oquo_imports.png" width="600">
+<img src="assets/oquo_imports-oquo-qasar.png" width="600">
 
 ## Modules
 
