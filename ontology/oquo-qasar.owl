@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="https://purl.org/oquo#"
-     xml:base="https://purl.org/oquo"
+<rdf:RDF xmlns="https://purl.org/oquo-qasar#"
+     xml:base="https://purl.org/oquo-qasar"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:rdf1="http://www.cropontology.org/rdf/"
