@@ -1,0 +1,43 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.8 Chrome/140.0.7339.240 Electron/38.4.0 Safari/537.36" version="28.2.8">
+  <diagram name="OQUO modules" id="oquo-modules">
+    <mxGraphModel dx="946" dy="599" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1240" pageHeight="720" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="core" value="&lt;b&gt;oquo-core&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#3a5978&quot;&gt;QMO · EVAL · OBOE · IPO&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#dbe9fb;strokeColor=#2f6fb0;fontColor=#173a5e;fontSize=18;fontStyle=1;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="490" y="40" width="260" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="huron" value="&lt;b&gt;oquo-huron&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#3c6a4d&quot;&gt;HURON metrics&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#dff0e2;strokeColor=#3d8f57;fontColor=#1e5233;fontSize=16;fontStyle=1;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="60" y="300" width="230" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="oquare" value="&lt;b&gt;oquo-oquare&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#3c6a4d&quot;&gt;OQuaRE metrics&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#dff0e2;strokeColor=#3d8f57;fontColor=#1e5233;fontSize=16;fontStyle=1;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="505" y="300" width="230" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="ontoenrich" value="&lt;b&gt;oquo-ontoenrich&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#3c6a4d&quot;&gt;OntoEnrich metrics&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#dff0e2;strokeColor=#3d8f57;fontColor=#1e5233;fontSize=16;fontStyle=1;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="950" y="300" width="230" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="oquo" value="&lt;b&gt;oquo-qasar&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px;&quot; color=&quot;#8a6420&quot;&gt;complete quality mode for qasar&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#f7ead0;strokeColor=#c08a2e;fontColor=#6e4a10;fontSize=18;fontStyle=1;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="505" y="560" width="230" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="imports" style="endArrow=classic;html=1;curved=1;strokeColor=#444444;strokeWidth=2;fontColor=#666666;fontStyle=2;fontSize=13;" parent="1" source="huron" target="core" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="imports" style="endArrow=classic;html=1;curved=1;strokeColor=#444444;strokeWidth=2;fontColor=#666666;fontStyle=2;fontSize=13;" parent="1" source="oquare" target="core" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="imports" style="endArrow=classic;html=1;curved=1;strokeColor=#444444;strokeWidth=2;fontColor=#666666;fontStyle=2;fontSize=13;" parent="1" source="ontoenrich" target="core" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="imports" style="endArrow=classic;html=1;curved=1;strokeColor=#444444;strokeWidth=2;fontColor=#666666;fontStyle=2;fontSize=13;" parent="1" source="oquo" target="huron" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="imports" style="endArrow=classic;html=1;curved=1;strokeColor=#444444;strokeWidth=2;fontColor=#666666;fontStyle=2;fontSize=13;" parent="1" source="oquo" target="oquare" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="imports" style="endArrow=classic;html=1;curved=1;strokeColor=#444444;strokeWidth=2;fontColor=#666666;fontStyle=2;fontSize=13;" parent="1" source="oquo" target="ontoenrich" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
