@@ -17,6 +17,7 @@
      xmlns:QualityModel="http://purl.org/net/QualityModel#">
     <owl:Ontology rdf:about="https://purl.org/oquo-core"/>
     
+    
 
 
     <!-- 
