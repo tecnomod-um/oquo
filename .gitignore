@@ -1,3 +1,6 @@
 catalog*.xml
 .DS_Store
 .DS_Store
+assets/.DS_Store
+assets/drawio/.$evaluation_results.drawio.bkp
+assets/.DS_Store
