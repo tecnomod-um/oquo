@@ -19,7 +19,6 @@
     
 
 
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -825,6 +824,17 @@ A Symptom may indicate many Issues, such as a Symptom of fever can indicate many
     
 
 
+    <!-- https://purl.org/oquo#hasInputScaleCategory -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/oquo#hasInputScaleCategory">
+        <rdfs:domain rdf:resource="https://purl.org/oquo#OrdinalToOrdinalScalePointMapping"/>
+        <rdfs:range rdf:resource="http://www.wurvoc.org/vocabularies/om-1.8/Measurement_scale_category"/>
+        <rdfs:comment>Relationship between an ordinal to ordinal scale point mapping and a measurement scale category.</rdfs:comment>
+        <rdfs:label>has input scale category</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://purl.org/oquo#hasIntervalBoundType -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/oquo#hasIntervalBoundType">
@@ -899,6 +909,7 @@ A Symptom may indicate many Issues, such as a Symptom of fever can indicate many
         <rdfs:domain rdf:resource="https://purl.org/oquo#ScaleConversion"/>
         <rdfs:range rdf:resource="https://purl.org/oquo#ScalePointMapping"/>
         <rdfs:comment>Relation between an scale conversion and its point mappings.</rdfs:comment>
+        <rdfs:label>has scale point mapping</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2408,6 +2419,58 @@ The Issue can have a set of Actions (Procedures) that will fix it and also a Iss
     
 
 
+    <!-- https://purl.org/oquo#OrdinalToOrdinalScaleConversion -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#OrdinalToOrdinalScaleConversion">
+        <rdfs:subClassOf rdf:resource="https://purl.org/oquo#ScaleConversion"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/oquo#hasInputScale"/>
+                <owl:someValuesFrom rdf:resource="http://www.wurvoc.org/vocabularies/om-1.8/Ordinal_scale"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/oquo#hasOutputScale"/>
+                <owl:someValuesFrom rdf:resource="http://www.wurvoc.org/vocabularies/om-1.8/Ordinal_scale"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/oquo#hasScalePointMapping"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#OrdinalToOrdinalScalePointMapping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Defines how to convert an ordinal scale into another ordinal scale.</rdfs:comment>
+        <rdfs:label>ordinal to ordinal scale conversion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#OrdinalToOrdinalScalePointMapping -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#OrdinalToOrdinalScalePointMapping">
+        <rdfs:subClassOf rdf:resource="https://purl.org/oquo#ScalePointMapping"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/oquo#hasInputScaleCategory"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.org/net/QualityModel#OrdinalScaleItem"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/oquo#hasOutputScaleCategory"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.org/net/QualityModel#OrdinalScaleItem"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Represents a mapping between two ordinal scales.</rdfs:comment>
+        <rdfs:label>ordinal to ordinal scale point mapping</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://purl.org/oquo#PhysicalSatisfactionCharacteristic -->
 
     <owl:Class rdf:about="https://purl.org/oquo#PhysicalSatisfactionCharacteristic">
@@ -3001,19 +3064,19 @@ The Issue can have a set of Actions (Procedures) that will fix it and also a Iss
         <rdfs:label>title</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#seeAlso">
-        <rdfs:label>seeAlso</rdfs:label>
-        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2000/01/rdf-schema#"/>
         <rdfs:comment>Further information about the subject resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2000/01/rdf-schema#"/>
+        <rdfs:label>seeAlso</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#backwardCompatibleWith">
         <rdfs:comment>The annotation property that indicates that a given ontology is backward compatible with another ontology.</rdfs:comment>
-        <rdfs:label>backwardCompatibleWith</rdfs:label>
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2002/07/owl#"/>
+        <rdfs:label>backwardCompatibleWith</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#deprecated">
-        <rdfs:label>deprecated</rdfs:label>
         <rdfs:comment>The annotation property that indicates that a given entity has been deprecated.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2002/07/owl#"/>
+        <rdfs:label>deprecated</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#incompatibleWith">
         <rdfs:comment>The annotation property that indicates that a given ontology is incompatible with another ontology.</rdfs:comment>
@@ -3021,13 +3084,13 @@ The Issue can have a set of Actions (Procedures) that will fix it and also a Iss
         <rdfs:label>incompatibleWith</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#priorVersion">
-        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2002/07/owl#"/>
         <rdfs:comment>The annotation property that indicates the predecessor ontology of a given ontology.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2002/07/owl#"/>
         <rdfs:label>priorVersion</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#versionInfo">
-        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2002/07/owl#"/>
         <rdfs:comment>The annotation property that provides version information for an ontology or another OWL construct.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2002/07/owl#"/>
         <rdfs:label>versionInfo</rdfs:label>
     </rdf:Description>
     
@@ -3177,5 +3240,5 @@ The Issue can have a set of Actions (Procedures) that will fix it and also a Iss
 
 
 
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
 
