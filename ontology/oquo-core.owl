@@ -827,7 +827,8 @@ A Symptom may indicate many Issues, such as a Symptom of fever can indicate many
     <!-- https://purl.org/oquo#hasInputScaleCategory -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/oquo#hasInputScaleCategory">
-        <rdfs:domain rdf:resource="https://purl.org/oquo#OrdinalToOrdinalScalePointMapping"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://purl.org/oquo#ScalePointMapping"/>
         <rdfs:range rdf:resource="http://www.wurvoc.org/vocabularies/om-1.8/Measurement_scale_category"/>
         <rdfs:comment>Relationship between an ordinal to ordinal scale point mapping and a measurement scale category.</rdfs:comment>
         <rdfs:label>has input scale category</rdfs:label>
