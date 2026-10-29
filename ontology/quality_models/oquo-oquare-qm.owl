@@ -1,0 +1,1269 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://purl.org/oquo#"
+     xml:base="https://purl.org/oquo"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:om-1="http://www.wurvoc.org/vocabularies/om-1.8/"
+     xmlns:rdf1="http://www.cropontology.org/rdf/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:QualityModel="http://purl.org/net/QualityModel#">
+    <owl:Ontology rdf:about="https://purl.org/oquo-oquare-qm">
+        <owl:imports rdf:resource="https://purl.org/oquo-core"/>
+    </owl:Ontology>
+    
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://purl.org/oquo#AdaptabilityCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#AdaptabilityCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">The degree to which The ontology can be adapted for different specified environments (languages, expresivity levels) without applying actions or means other than those provided for this purpose for the Ontology considered.</obo:IAO_0000115>
+        <rdfs:label>adaptability characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#AnalysabilityCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#AnalysabilityCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">The degree to which The ontology can be diagnosed for deficiencies or causes of failures (inconsistences), or for the parts to be modified to be identified.</obo:IAO_0000115>
+        <rdfs:label>analysability characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#AppropriatenessRecognisabilityCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#AppropriatenessRecognisabilityCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">The degree to which the Ontology enables users to recognise whether it is appropriate for their needs.</obo:IAO_0000115>
+        <rdfs:label>appropriateness recognisability characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#AvailabilityCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#AvailabilityCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">The degree to which an ontology, or part of it, is operational and available when required for use with different applications.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">availability characteristic</rdfs:label>
+    </owl:Class>
+
+
+    <!-- https://purl.org/oquo#ChangeabilityCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#ChangeabilityCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">The degree to which The Ontology enables a specified modification to be implemented. The ease with which a The ontology can be modified.</obo:IAO_0000115>
+        <rdfs:label>changeability characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#ClassifyingInstancesCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#ClassifyingInstancesCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">Degree in which ontology Instances can be recognized as member of a certain class.</obo:IAO_0000115>
+        <rdfs:label>classifying instances characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#ClusteringCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#ClusteringCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">Degree in which the annotations of data with respect to ontology terms can be used for clustering such data against the aspects of the ontology.</obo:IAO_0000115>
+        <rdfs:label>clustering characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#CognitiveSatisfactionCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#CognitiveSatisfactionCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">Cognitive satisfaction</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym xml:lang="en">Likability characteristic</oboInOwl:hasExactSynonym>
+        <rdfs:label>cognitive satisfaction characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#CohesionCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#CohesionCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">An ontology has a high cohesion if the classes are strongly related.</obo:IAO_0000115>
+        <rdfs:label>cohesion characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#CompatibilityCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#CompatibilityCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#InteroperabilityCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#ReplaceabilityCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://purl.org/oquo#InteroperabilityCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#ReplaceabilityCharacteristic"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">The ability of two or more software components to exchange information and/or to perform their required functions while sharing the same hardware or software environment.</obo:IAO_0000115>
+        <rdfs:label>compatibility characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#ConsistencyCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#ConsistencyCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">Degree of the consistency of the ontology.</obo:IAO_0000115>
+        <rdfs:label>consistency characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#ConsistentSearchAndQueryCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#ConsistentSearchAndQueryCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">The degree which the formal model and structure of the ontology provide a semantic context to evaluate which are the data wanted by the users, allowing better querying and searching methods.</obo:IAO_0000115>
+        <rdfs:label>consistent search and query characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#ContextConformityInUseCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#ContextConformityInUseCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">The degree to which usability in use meets requirements in all the intended contexts of use.</obo:IAO_0000115>
+        <rdfs:label>context conformity in use characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#ContextExtendibilityInUseCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#ContextExtendibilityInUseCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">The degree of usability in use in contexts beyond those initially intended.</obo:IAO_0000115>
+        <rdfs:label>context extendibility in use characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#ControlledVocabularyCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#ControlledVocabularyCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">Capability of the ontology to avoid heterogeneity of the terms.</obo:IAO_0000115>
+        <rdfs:label>controlled vocabulary characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#CyclesCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#CyclesCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">The existence of cycles through a particular semantic relation is usually a sign of bad design, since they may lead to inconsistencies.</obo:IAO_0000115>
+        <rdfs:label>cycles characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#DecisionTreesCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#DecisionTreesCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">Capability of the ontology to be used building Decision trees.</obo:IAO_0000115>
+        <rdfs:label>decision trees characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#DomainCoverageCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#DomainCoverageCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">The degree to which The ontology cover the specified domain</obo:IAO_0000115>
+        <rdfs:label>domain coverage characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#EaseOfUseCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#EaseOfUseCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">The degree to which the ontology makes it easy for users to operate and control it.</obo:IAO_0000115>
+        <rdfs:label>ease of use characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#EffectivenessInUseCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#EffectivenessInUseCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">The degree to which specified users can achieve specified goals with accuracy and completeness in a specified context of use.</obo:IAO_0000115>
+        <rdfs:label>effectiveness in use characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#EfficiencyInUseCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#EfficiencyInUseCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">The degree to which specified users expend appropriate amounts of resources in relation to the effectiveness achieved in a specified context of use.</obo:IAO_0000115>
+        <rdfs:label>efficiency in use characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#EmotionalSatisfactionCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#EmotionalSatisfactionCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">Emotional satisfaction</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym xml:lang="en">Pleasure characteristic</oboInOwl:hasExactSynonym>
+        <rdfs:label>emotional satisfaction characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#FlexibilityInUseCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#FlexibilityInUseCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#ContextConformityInUseCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#ContextExtendibilityInUseCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://purl.org/oquo#ContextConformityInUseCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#ContextExtendibilityInUseCharacteristic"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>flexibility in use characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#FormalRelationSupportCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#FormalRelationSupportCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">Capability of the ontology to represent relations supported for formal theories different to the formal support for taxonomy.</obo:IAO_0000115>
+        <rdfs:label>formal relation support characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#FormalisationCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#FormalisationCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">Capability of the ontology to support reasoning</obo:IAO_0000115>
+        <rdfs:label>formalisation characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#FunctionalAdequacyCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#FunctionalAdequacyCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#ClassifyingInstancesCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#ClusteringCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#ConsistentSearchAndQueryCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#ControlledVocabularyCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#DecisionTreesCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#GuidanceCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#IndexingAndLinkingCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#InferenceCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#KnowledgeAcquisitionRepresentationCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#KnowledgeReuseCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#PrecisionCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#ReferenceOntologyCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#ResultsRepresentationCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#SchemaAndValueReconciliationCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#SimilarityCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#TextAnalysisCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://purl.org/oquo#ClassifyingInstancesCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#ClusteringCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#ConsistentSearchAndQueryCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#ControlledVocabularyCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#DecisionTreesCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#GuidanceCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#IndexingAndLinkingCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#InferenceCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#KnowledgeAcquisitionRepresentationCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#KnowledgeReuseCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#PrecisionCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#ReferenceOntologyCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#ResultsRepresentationCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#SchemaAndValueReconciliationCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#SimilarityCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#TextAnalysisCharacteristic"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">The capability of the ontologies to provide concrete functions.</obo:IAO_0000115>
+        <rdfs:label>functional adequacy characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#GuidanceCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#GuidanceCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">Capability of the ontology to guide the specification of domain theories.</obo:IAO_0000115>
+        <rdfs:label>guidance characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#HelpfulnessCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#HelpfulnessCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">The degree to which the Ontology provides help when users need assistance.</obo:IAO_0000115>
+        <rdfs:label>helpfulness characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#IndexingAndLinkingCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#IndexingAndLinkingCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">Degree in which the classes defined in the ontology can act as indexes for quick information retrieval.</obo:IAO_0000115>
+        <rdfs:label>indexing and linking characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#InferenceCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#InferenceCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">The degree to which The formal model of the ontology can be used by reasoners to make implicit knowledge explicit.</obo:IAO_0000115>
+        <rdfs:label>inference characteristic</rdfs:label>
+    </owl:Class>
+    
+
+    
+
+
+    <!-- https://purl.org/oquo#InteroperabilityCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#InteroperabilityCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">The degree to which the ontology can be cooperatively operable combining its knowledge with one or more other ontologies.</obo:IAO_0000115>
+        <rdfs:label>interoperability characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+
+
+
+    <!-- https://purl.org/oquo#KnowledgeAcquisitionRepresentationCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#KnowledgeAcquisitionRepresentationCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">Capability of the Ontology to represent the knowledge acquired.</obo:IAO_0000115>
+        <rdfs:label>knowledge acquisition representation characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#KnowledgeReuseCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#KnowledgeReuseCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">The degree to which The ontology knowledge can be used to build other ontologies.</obo:IAO_0000115>
+        <rdfs:label>knowledge reuse characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#LearnabilityCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#LearnabilityCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">The degree to which the ontology enables users to learn its application.</obo:IAO_0000115>
+        <rdfs:label>learnability characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#MaintainabilityCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#MaintainabilityCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#AnalysabilityCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#ChangeabilityCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#ModificationStabilityCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#ModularityCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#ReusabilityCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#TestabilityCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://purl.org/oquo#AnalysabilityCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#ChangeabilityCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#ModificationStabilityCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#ModularityCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#ReusabilityCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#TestabilityCharacteristic"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">The capability of ontologies to be modified for changes in environments, in requirements or in functional specifications.</obo:IAO_0000115>
+        <rdfs:label>maintainability characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    
+
+
+    <!-- https://purl.org/oquo#ModificationStabilityCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#ModificationStabilityCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">The degree to which The ontology can avoid unexpected effects from modifications of the software or knowledge.</obo:IAO_0000115>
+        <rdfs:label>modification stability characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#ModularityCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#ModularityCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">The degree to which the ontology is composed of discrete components such that a change to one component has minimal impact on other components.</obo:IAO_0000115>
+        <rdfs:label>modularity characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#OperabilityCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#OperabilityCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#AppropriatenessRecognisabilityCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#EaseOfUseCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#HelpfulnessCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#LearnabilityCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://purl.org/oquo#AppropriatenessRecognisabilityCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#EaseOfUseCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#HelpfulnessCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#LearnabilityCharacteristic"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">Effort needed for use, and on the individual assessment of such use, by a stated or implied set of users.</obo:IAO_0000115>
+        <rdfs:label>operability characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#OquareFiveCategoriesCategory -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#OquareFiveCategoriesCategory">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://purl.org/oquo#OquareCategory1"/>
+                    <rdf:Description rdf:about="https://purl.org/oquo#OquareCategory2"/>
+                    <rdf:Description rdf:about="https://purl.org/oquo#OquareCategory3"/>
+                    <rdf:Description rdf:about="https://purl.org/oquo#OquareCategory4"/>
+                    <rdf:Description rdf:about="https://purl.org/oquo#OquareCategory5"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.wurvoc.org/vocabularies/om-1.8/Ordered_measurement_scale_category"/>
+        <rdfs:comment>Class to classify the 5 points of the oquare scale.</rdfs:comment>
+        <rdfs:label>oquare five categories category</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#PhysicalSatisfactionCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#PhysicalSatisfactionCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">Physical satisfaction</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym xml:lang="en">Comfort characteristic</oboInOwl:hasExactSynonym>
+        <rdfs:label>physical satisfaction characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#PortabilityCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#PortabilityCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">The degree in which an Ontology or one part of the ontology can be transferred from one hardware or software environment to another.</obo:IAO_0000115>
+        <rdfs:label>portability characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#PrecisionCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#PrecisionCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">The degree to which The ontology provides the right or specified results with the needed degree of accuracy.</obo:IAO_0000115>
+        <rdfs:label>precision characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#QualityInUseCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#QualityInUseCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#FlexibilityInUseCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#UsabilityInUseCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://purl.org/oquo#FlexibilityInUseCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#UsabilityInUseCharacteristic"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">Quality in a particular context of use. Quality in use is the degree to which a product used by specific users meets their needs to achieve specific goals.</obo:IAO_0000115>
+        <rdfs:label>quality in use characteristic</rdfs:label>
+    </owl:Class>
+
+
+    <!-- https://purl.org/oquo#RecoverabilityCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#RecoverabilityCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">The degree to which the ontology can reestablish a specified level of performance and recover the data directly affected in the case of a failure.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">recoverability characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#RedundancyCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#RedundancyCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">Capability of the ontology to be informative</obo:IAO_0000115>
+        <rdfs:label>redundancy characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#ReferenceOntologyCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#ReferenceOntologyCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">Degree in which the ontology can be used as a reference resource for the particular domain the ontology is built for.</obo:IAO_0000115>
+        <rdfs:label>reference ontology characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#ReliabilityCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#ReliabilityCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#AvailabilityCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#RecoverabilityCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">Capability of an ontology to maintain its level of performance under stated conditions for a given period of time.</obo:IAO_0000115>
+        <rdfs:label>reliability characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#ReplaceabilityCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#ReplaceabilityCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">The degree to which The ontology can be used in place of another specified Ontology for the same purpose in the same environment.</obo:IAO_0000115>
+        <rdfs:label>replaceability characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#ResultsRepresentationCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#ResultsRepresentationCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">Capability of the ontology to analize complex results such as microarrays experiments.</obo:IAO_0000115>
+        <rdfs:label>results representation characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#ReusabilityCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#ReusabilityCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">The degree to which an asset (part of) the ontology can be used in more than one ontology, or in building other assets.</obo:IAO_0000115>
+        <rdfs:label>reusability characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#SatisfactionInUseCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#SatisfactionInUseCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#CognitiveSatisfactionCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#EmotionalSatisfactionCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#PhysicalSatisfactionCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://purl.org/oquo#CognitiveSatisfactionCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#EmotionalSatisfactionCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#PhysicalSatisfactionCharacteristic"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">The degree to which users are satisfied in a especified context of use.</obo:IAO_0000115>
+        <rdfs:label>satisfaction in use characteristic</rdfs:label>
+    </owl:Class>
+    
+
+    <!-- https://purl.org/oquo#SchemaAndValueReconciliationCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#SchemaAndValueReconciliationCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">Degree in which ontology provide a common data model that can be applied to reconciliation and integration.</obo:IAO_0000115>
+        <rdfs:label>schema and value reconciliation characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#SimilarityCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#SimilarityCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">Capability of the component of the ontology to be compared for similarity.</obo:IAO_0000115>
+        <rdfs:label>similarity characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#StructuralAccuracyCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#StructuralAccuracyCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">Degree of the correctness of the terms used in the ontology.</obo:IAO_0000115>
+        <rdfs:label>structural accuracy characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#StructuralCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#StructuralCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#CohesionCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#ConsistencyCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#CyclesCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#DomainCoverageCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#FormalRelationSupportCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#FormalisationCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#RedundancyCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#StructuralAccuracyCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#TanglednessCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://purl.org/oquo#CohesionCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#ConsistencyCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#CyclesCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#DomainCoverageCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#FormalRelationSupportCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#FormalisationCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#RedundancyCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#StructuralAccuracyCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#TanglednessCharacteristic"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">The structural characteristic accounts for ontology quality factors such as consistency, formalisation, redundancy or tangledness.</obo:IAO_0000115>
+        <rdfs:label>structural characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#TanglednessCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#TanglednessCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">This measures the distribution of multiple parent categories, so that it is related to the existence of multiple inheritance.</obo:IAO_0000115>
+        <rdfs:label>tangledness characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#TestabilityCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#TestabilityCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">The degree to which the ontology modified can be validated.</obo:IAO_0000115>
+        <rdfs:label>testability characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#TextAnalysisCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#TextAnalysisCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">Capability of the structure of the ontology to helps detecting associations between words or concepts and classifying word types.</obo:IAO_0000115>
+        <rdfs:label>text analysis characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#TransferabilityCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#TransferabilityCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#AdaptabilityCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#PortabilityCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://purl.org/oquo#AdaptabilityCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#PortabilityCharacteristic"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">The degree to which the software product can be transferred from one environment to another.</obo:IAO_0000115>
+        <rdfs:label>transferability characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#UsabilityInUseCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#UsabilityInUseCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#EffectivenessInUseCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#EfficiencyInUseCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#SatisfactionInUseCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://purl.org/oquo#EffectivenessInUseCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#EfficiencyInUseCharacteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo#SatisfactionInUseCharacteristic"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>usability in use characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+    
+
+
+    <!-- https://purl.org/oquo#OquareCategory1 -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/oquo#OquareCategory1">
+        <rdf:type rdf:resource="https://purl.org/oquo#OquareFiveCategoriesCategory"/>
+        <om-1:rank rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</om-1:rank>
+        <obo:IAO_0000115>Not acceptable</obo:IAO_0000115>
+        <rdfs:label>oquare category 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/oquo#OquareCategory2 -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/oquo#OquareCategory2">
+        <rdf:type rdf:resource="https://purl.org/oquo#OquareFiveCategoriesCategory"/>
+        <om-1:rank rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</om-1:rank>
+        <obo:IAO_0000115>Insufficient</obo:IAO_0000115>
+        <rdfs:label>oquare category 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/oquo#OquareCategory3 -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/oquo#OquareCategory3">
+        <rdf:type rdf:resource="https://purl.org/oquo#OquareFiveCategoriesCategory"/>
+        <om-1:rank rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</om-1:rank>
+        <obo:IAO_0000115>Minimally acceptable</obo:IAO_0000115>
+        <rdfs:label>oquare category 3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/oquo#OquareCategory4 -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/oquo#OquareCategory4">
+        <rdf:type rdf:resource="https://purl.org/oquo#OquareFiveCategoriesCategory"/>
+        <om-1:rank rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</om-1:rank>
+        <obo:IAO_0000115>Acceptable</obo:IAO_0000115>
+        <rdfs:label>oquare category 4</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/oquo#OquareCategory5 -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/oquo#OquareCategory5">
+        <rdf:type rdf:resource="https://purl.org/oquo#OquareFiveCategoriesCategory"/>
+        <om-1:rank rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</om-1:rank>
+        <obo:IAO_0000115>Exceeds the requirements</obo:IAO_0000115>
+        <rdfs:label>oquare category 5</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.org/oquo#OquareFiveCategoriesScale -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/oquo#OquareFiveCategoriesScale">
+        <rdf:type rdf:resource="http://www.wurvoc.org/vocabularies/om-1.8/Ordinal_scale"/>
+        <QualityModel:hasRankigFunction rdf:resource="http://purl.org/net/QualityModel#HigherBest"/>
+        <om-1:element rdf:resource="https://purl.org/oquo#OquareCategory1"/>
+        <om-1:element rdf:resource="https://purl.org/oquo#OquareCategory2"/>
+        <om-1:element rdf:resource="https://purl.org/oquo#OquareCategory3"/>
+        <om-1:element rdf:resource="https://purl.org/oquo#OquareCategory4"/>
+        <om-1:element rdf:resource="https://purl.org/oquo#OquareCategory5"/>
+        <obo:IAO_0000115>Scale used by OQuaRE, consisting in five categories from 1 to 5, meaning not acceptable, insufficient, minimally acceptable, acceptable, and exceeds requirements, respectively.</obo:IAO_0000115>
+        <rdfs:label>oquare five categories scale</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://purl.org/oquo#AdaptabilityCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#AnalysabilityCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#AppropriatenessRecognisabilityCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#AvailabilityCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#ChangeabilityCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#ClassifyingInstancesCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#ClusteringCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#CognitiveSatisfactionCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#CohesionCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#CompatibilityCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#ConsistencyCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#ConsistentSearchAndQueryCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#ContextConformityInUseCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#ContextExtendibilityInUseCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#ControlledVocabularyCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#CyclesCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#DecisionTreesCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#DomainCoverageCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#EaseOfUseCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#EffectivenessInUseCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#EfficiencyInUseCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#EmotionalSatisfactionCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#FlexibilityInUseCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#FormalRelationSupportCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#FormalisationCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#FunctionalAdequacyCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#GuidanceCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#HelpfulnessCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#IndexingAndLinkingCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#InferenceCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#InteroperabilityCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#KnowledgeAcquisitionRepresentationCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#KnowledgeReuseCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#LearnabilityCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#MaintainabilityCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#ModificationStabilityCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#ModularityCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#OperabilityCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#PhysicalSatisfactionCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#PortabilityCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#PrecisionCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#QualityInUseCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#RecoverabilityCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#RedundancyCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#ReferenceOntologyCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#ReliabilityCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#ReplaceabilityCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#ResultsRepresentationCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#ReusabilityCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#SatisfactionInUseCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#SchemaAndValueReconciliationCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#SimilarityCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#StructuralAccuracyCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#StructuralCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#TanglednessCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#TestabilityCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#TextAnalysisCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#TransferabilityCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo#UsabilityInUseCharacteristic"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>

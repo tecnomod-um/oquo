@@ -1,0 +1,559 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://purl.org/oquo-fair-qm#"
+     xml:base="https://purl.org/oquo-fair-qm"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:om-1="http://www.wurvoc.org/vocabularies/om-1.8/"
+     xmlns:rdf1="http://www.cropontology.org/rdf/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:oquo="https://purl.org/oquo#"
+     xmlns:QualityModel="http://purl.org/net/QualityModel#">
+    <owl:Ontology rdf:about="https://purl.org/oquo-fair-qm">
+        <owl:imports rdf:resource="https://purl.org/oquo-core"/>
+        <dc:title xml:lang="en">OQUO FAIR quality model</dc:title>
+        <dc:description xml:lang="en">Quality model for OQUO based on the FAIR Guiding Principles. The four FAIR principles (Findable, Accessible, Interoperable, Reusable) are modelled as quality characteristics and their sub-principles (F1-F4, A1, A1.1, A1.2, A2, I1-I3, R1, R1.1-R1.3) as subcharacteristics, related through hasSubCharacteristic. Characteristics and subcharacteristics are measured on a percentage scale (0-100) of degree of compliance.</dc:description>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-10-29</terms:created>
+        <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        <vann:preferredNamespacePrefix>oquo-fair-qm</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>https://purl.org/oquo-fair-qm#</vann:preferredNamespaceUri>
+        <rdfs:seeAlso rdf:resource="https://www.gofair.foundation/fair-principles"/>
+        <rdfs:seeAlso rdf:resource="https://doi.org/10.1038/sdata.2016.18"/>
+        <obo:IAO_0000116 xml:lang="en">The definitions of the characteristics are adapted from the FAIR principles published by the GO FAIR Foundation (CC BY 4.0) and Wilkinson et al. (2016), rephrased as degrees of compliance of an evaluated resource and illustrated for the case of ontologies.</obo:IAO_0000116>
+    </owl:Ontology>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#seeAlso -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+    <!-- https://purl.org/oquo-fair-qm#A1Characteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo-fair-qm#A1Characteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo-fair-qm#A1_1Characteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo-fair-qm#A1_2Characteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://purl.org/oquo-fair-qm#A1_1Characteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo-fair-qm#A1_2Characteristic"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">Degree to which the resource and its metadata can be obtained from their identifier by means of a standardised communication protocol, without requiring specialised or proprietary tools. For an ontology, this usually means that its IRI and its entity IRIs are dereferenceable over HTTP(S), ideally supporting content negotiation to return machine-readable serialisations (e.g. RDF/XML or Turtle) or human-readable documentation. It is refined by the subcharacteristics A1.1 and A1.2.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GO FAIR Foundation, https://www.gofair.foundation/a1</obo:IAO_0000119>
+        <obo:IAO_0000119 xml:lang="en">Wilkinson, M. D. et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data, 3:160018. https://doi.org/10.1038/sdata.2016.18</obo:IAO_0000119>
+        <rdf1:acronym>A1</rdf1:acronym>
+        <rdfs:comment xml:lang="en">Degree to which the resource and its metadata are retrievable by their identifier through a standardised protocol.</rdfs:comment>
+        <rdfs:label xml:lang="en">FAIR A1 retrievable by identifier through standardised protocol characteristic</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- https://purl.org/oquo-fair-qm#A1_1Characteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo-fair-qm#A1_1Characteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">Degree to which the communication protocol used to retrieve the resource is open, free of charge and universally implementable, so that anyone can build a client to access it without limitations such as licence fees or undisclosed specifications. Protocols such as HTTP(S) or FTP comply with this subcharacteristic, whereas proprietary or restricted protocols reduce compliance.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GO FAIR Foundation, https://www.gofair.foundation/a1-1</obo:IAO_0000119>
+        <obo:IAO_0000119 xml:lang="en">Wilkinson, M. D. et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data, 3:160018. https://doi.org/10.1038/sdata.2016.18</obo:IAO_0000119>
+        <rdf1:acronym>A1.1</rdf1:acronym>
+        <rdfs:comment xml:lang="en">Degree to which the retrieval protocol is open, free and universally implementable.</rdfs:comment>
+        <rdfs:label xml:lang="en">FAIR A1.1 open, free and universally implementable protocol characteristic</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- https://purl.org/oquo-fair-qm#A1_2Characteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo-fair-qm#A1_2Characteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">Degree to which the communication protocol allows for authentication and authorisation procedures when access to the resource must be restricted, so that the identity of the requester and their permissions can be verified. This subcharacteristic does not penalise openly accessible resources; it ensures that, when restrictions apply, they are implemented through standard, well-defined mechanisms (e.g. HTTPS with OAuth) rather than ad hoc ones.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GO FAIR Foundation, https://www.gofair.foundation/a1-2</obo:IAO_0000119>
+        <obo:IAO_0000119 xml:lang="en">Wilkinson, M. D. et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data, 3:160018. https://doi.org/10.1038/sdata.2016.18</obo:IAO_0000119>
+        <rdf1:acronym>A1.2</rdf1:acronym>
+        <rdfs:comment xml:lang="en">Degree to which the retrieval protocol supports authentication and authorisation where necessary.</rdfs:comment>
+        <rdfs:label xml:lang="en">FAIR A1.2 protocol supports authentication and authorisation characteristic</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- https://purl.org/oquo-fair-qm#A2Characteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo-fair-qm#A2Characteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">Degree to which the metadata of the resource remain accessible even after the resource itself is no longer available, for instance because it has been deprecated, withdrawn or moved. Persistent metadata allow users to know that the resource existed, what it contained and by what it may have been superseded. For ontologies, this involves keeping available the metadata of previous versions and of obsolete entities (e.g. through owl:deprecated and replacement annotations).</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GO FAIR Foundation, https://www.gofair.foundation/a2</obo:IAO_0000119>
+        <obo:IAO_0000119 xml:lang="en">Wilkinson, M. D. et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data, 3:160018. https://doi.org/10.1038/sdata.2016.18</obo:IAO_0000119>
+        <rdf1:acronym>A2</rdf1:acronym>
+        <rdfs:comment xml:lang="en">Degree to which metadata remain accessible when the resource is no longer available.</rdfs:comment>
+        <rdfs:label xml:lang="en">FAIR A2 metadata accessible when data are no longer available characteristic</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- https://purl.org/oquo-fair-qm#AccessibleCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo-fair-qm#AccessibleCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo-fair-qm#A1Characteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo-fair-qm#A2Characteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://purl.org/oquo-fair-qm#A1Characteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo-fair-qm#A2Characteristic"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">Degree to which, once the resource has been found, users and software agents know how it and its metadata can be retrieved, possibly including authentication and authorisation. Accessibility does not require the resource to be open, but requires that the conditions and mechanisms of access are clear and standardised, and that metadata remain available over time. It is assessed through the subcharacteristics A1 (refined by A1.1 and A1.2) and A2.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GO FAIR Foundation, https://www.gofair.foundation/fair-principles</obo:IAO_0000119>
+        <obo:IAO_0000119 xml:lang="en">Wilkinson, M. D. et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data, 3:160018. https://doi.org/10.1038/sdata.2016.18</obo:IAO_0000119>
+        <rdf1:acronym>A</rdf1:acronym>
+        <rdfs:comment xml:lang="en">Degree to which the resource and its metadata can be retrieved once found.</rdfs:comment>
+        <rdfs:label xml:lang="en">FAIR accessible characteristic</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- https://purl.org/oquo-fair-qm#F1Characteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo-fair-qm#F1Characteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">Degree to which the resource and its metadata are assigned an identifier that is globally unique, so that it unambiguously refers to that resource and no other, and persistent, so that it keeps resolving to the resource over time. For an ontology, this typically involves a stable ontology IRI, version IRIs and resolvable entity IRIs, for instance through PURL or w3id services, avoiding IRIs bound to local or temporary locations.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GO FAIR Foundation, https://www.gofair.foundation/f1</obo:IAO_0000119>
+        <obo:IAO_0000119 xml:lang="en">Wilkinson, M. D. et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data, 3:160018. https://doi.org/10.1038/sdata.2016.18</obo:IAO_0000119>
+        <rdf1:acronym>F1</rdf1:acronym>
+        <rdfs:comment xml:lang="en">Degree to which the resource and its metadata have a globally unique and persistent identifier.</rdfs:comment>
+        <rdfs:label xml:lang="en">FAIR F1 globally unique and persistent identifier characteristic</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- https://purl.org/oquo-fair-qm#F2Characteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo-fair-qm#F2Characteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">Degree to which the resource is accompanied by metadata generous enough to support its discovery, even by users who do not know its identifier. Rich metadata include descriptive information such as title, description, creators, keywords, domain or version. For an ontology, this corresponds to the annotations attached to the ontology header and to its entities, preferably expressed with widely used metadata vocabularies (e.g. Dublin Core, DCAT or schema.org).</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GO FAIR Foundation, https://www.gofair.foundation/f2</obo:IAO_0000119>
+        <obo:IAO_0000119 xml:lang="en">Wilkinson, M. D. et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data, 3:160018. https://doi.org/10.1038/sdata.2016.18</obo:IAO_0000119>
+        <rdf1:acronym>F2</rdf1:acronym>
+        <rdfs:comment xml:lang="en">Degree to which the resource is described with rich metadata.</rdfs:comment>
+        <rdfs:label xml:lang="en">FAIR F2 rich metadata characteristic</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- https://purl.org/oquo-fair-qm#F3Characteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo-fair-qm#F3Characteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">Degree to which the metadata explicitly and unambiguously state the identifier of the resource they describe, so that the link between metadata and resource is preserved when they are stored or exchanged separately. For an ontology, this means that metadata records (e.g. in a registry or in a separate metadata file) include the ontology IRI and, where applicable, the version IRI.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GO FAIR Foundation, https://www.gofair.foundation/f3</obo:IAO_0000119>
+        <obo:IAO_0000119 xml:lang="en">Wilkinson, M. D. et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data, 3:160018. https://doi.org/10.1038/sdata.2016.18</obo:IAO_0000119>
+        <rdf1:acronym>F3</rdf1:acronym>
+        <rdfs:comment xml:lang="en">Degree to which the metadata explicitly include the identifier of the resource they describe.</rdfs:comment>
+        <rdfs:label xml:lang="en">FAIR F3 metadata include data identifier characteristic</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- https://purl.org/oquo-fair-qm#F4Characteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo-fair-qm#F4Characteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">Degree to which the resource and its metadata are registered or indexed in a resource that can be searched, such as a catalogue, repository or search engine, so that they can be found by humans and machines. For ontologies, this includes their registration in ontology repositories and libraries such as BioPortal, OLS, the OBO Foundry, LOV or Archivo.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GO FAIR Foundation, https://www.gofair.foundation/f4</obo:IAO_0000119>
+        <obo:IAO_0000119 xml:lang="en">Wilkinson, M. D. et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data, 3:160018. https://doi.org/10.1038/sdata.2016.18</obo:IAO_0000119>
+        <rdf1:acronym>F4</rdf1:acronym>
+        <rdfs:comment xml:lang="en">Degree to which the resource and its metadata are registered or indexed in a searchable resource.</rdfs:comment>
+        <rdfs:label xml:lang="en">FAIR F4 registered or indexed in searchable resource characteristic</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- https://purl.org/oquo-fair-qm#FindableCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo-fair-qm#FindableCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo-fair-qm#F1Characteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo-fair-qm#F2Characteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo-fair-qm#F3Characteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo-fair-qm#F4Characteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://purl.org/oquo-fair-qm#F1Characteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo-fair-qm#F2Characteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo-fair-qm#F3Characteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo-fair-qm#F4Characteristic"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">Degree to which the evaluated resource and its metadata can be easily discovered by both humans and software agents. Findability is the first step towards any reuse and relies on the resource having a globally unique and persistent identifier, being described with rich metadata that explicitly reference that identifier, and being registered or indexed in searchable resources, so that machine-readable metadata enable the automatic discovery of the resource. It is assessed through the subcharacteristics F1 to F4.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GO FAIR Foundation, https://www.gofair.foundation/fair-principles</obo:IAO_0000119>
+        <obo:IAO_0000119 xml:lang="en">Wilkinson, M. D. et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data, 3:160018. https://doi.org/10.1038/sdata.2016.18</obo:IAO_0000119>
+        <rdf1:acronym>F</rdf1:acronym>
+        <rdfs:comment xml:lang="en">Degree to which the resource and its metadata can be discovered by humans and machines.</rdfs:comment>
+        <rdfs:label xml:lang="en">FAIR findable characteristic</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- https://purl.org/oquo-fair-qm#I1Characteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo-fair-qm#I1Characteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">Degree to which the resource and its metadata are expressed in a formal, accessible, shared and broadly applicable language for knowledge representation, so that they can be exchanged and interpreted by humans and machines without specialised algorithms or translators. For ontologies, this corresponds to the use of W3C standard languages and serialisations, such as RDF, RDFS and OWL, and to the absence of syntactic and logical errors that would prevent their correct processing.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GO FAIR Foundation, https://www.gofair.foundation/i1</obo:IAO_0000119>
+        <obo:IAO_0000119 xml:lang="en">Wilkinson, M. D. et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data, 3:160018. https://doi.org/10.1038/sdata.2016.18</obo:IAO_0000119>
+        <rdf1:acronym>I1</rdf1:acronym>
+        <rdfs:comment xml:lang="en">Degree to which the resource and its metadata use a formal, accessible, shared and broadly applicable knowledge representation language.</rdfs:comment>
+        <rdfs:label xml:lang="en">FAIR I1 formal knowledge representation language characteristic</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- https://purl.org/oquo-fair-qm#I2Characteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo-fair-qm#I2Characteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">Degree to which the resource and its metadata use vocabularies, ontologies and terminologies that themselves comply with the FAIR principles, being documented, identified by globally unique and persistent identifiers, and openly accessible. For an ontology, this refers to the vocabularies it imports or reuses (e.g. for annotations or upper-level classes), whose own FAIRness conditions the interoperability of the ontology.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GO FAIR Foundation, https://www.gofair.foundation/i2</obo:IAO_0000119>
+        <obo:IAO_0000119 xml:lang="en">Wilkinson, M. D. et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data, 3:160018. https://doi.org/10.1038/sdata.2016.18</obo:IAO_0000119>
+        <rdf1:acronym>I2</rdf1:acronym>
+        <rdfs:comment xml:lang="en">Degree to which the resource and its metadata use vocabularies that follow the FAIR principles.</rdfs:comment>
+        <rdfs:label xml:lang="en">FAIR I2 FAIR vocabularies characteristic</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- https://purl.org/oquo-fair-qm#I3Characteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo-fair-qm#I3Characteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">Degree to which the resource and its metadata contain qualified references to other data and metadata, that is, cross-references whose meaning is explicitly specified (i.e. which relation holds between the resources) rather than plain links. For ontologies, this includes the reuse of external entities and the mappings and alignments with other ontologies expressed through well-defined properties (e.g. owl:equivalentClass, skos:exactMatch, rdfs:seeAlso or database cross-references).</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GO FAIR Foundation, https://www.gofair.foundation/i3</obo:IAO_0000119>
+        <obo:IAO_0000119 xml:lang="en">Wilkinson, M. D. et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data, 3:160018. https://doi.org/10.1038/sdata.2016.18</obo:IAO_0000119>
+        <rdf1:acronym>I3</rdf1:acronym>
+        <rdfs:comment xml:lang="en">Degree to which the resource and its metadata include qualified references to other (meta)data.</rdfs:comment>
+        <rdfs:label xml:lang="en">FAIR I3 qualified references characteristic</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- https://purl.org/oquo-fair-qm#InteroperableCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo-fair-qm#InteroperableCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo-fair-qm#I1Characteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo-fair-qm#I2Characteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo-fair-qm#I3Characteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://purl.org/oquo-fair-qm#I1Characteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo-fair-qm#I2Characteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo-fair-qm#I3Characteristic"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">Degree to which the resource can be integrated with other data and can interoperate with applications or workflows for analysis, storage and processing. Interoperability requires that the resource and its metadata are represented in formal, shared languages, use vocabularies that are themselves FAIR, and contain qualified references to other resources. It is assessed through the subcharacteristics I1 to I3.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GO FAIR Foundation, https://www.gofair.foundation/fair-principles</obo:IAO_0000119>
+        <obo:IAO_0000119 xml:lang="en">Wilkinson, M. D. et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data, 3:160018. https://doi.org/10.1038/sdata.2016.18</obo:IAO_0000119>
+        <rdf1:acronym>I</rdf1:acronym>
+        <rdfs:comment xml:lang="en">Degree to which the resource can be integrated with other data, applications and workflows.</rdfs:comment>
+        <rdfs:label xml:lang="en">FAIR interoperable characteristic</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- https://purl.org/oquo-fair-qm#R1Characteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo-fair-qm#R1Characteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo-fair-qm#R1_1Characteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo-fair-qm#R1_2Characteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo-fair-qm#R1_3Characteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://purl.org/oquo-fair-qm#R1_1Characteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo-fair-qm#R1_2Characteristic"/>
+                            <rdf:Description rdf:about="https://purl.org/oquo-fair-qm#R1_3Characteristic"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">Degree to which the resource and its metadata are described with a plurality of accurate and relevant attributes, enabling users to decide whether the resource is useful in a particular context. Whereas F2 focuses on metadata that support discovery, R1 focuses on metadata that support reuse, such as the scope and intended use of the resource, its limitations, or the documentation of its entities through labels, definitions and synonyms. It is refined by the subcharacteristics R1.1, R1.2 and R1.3.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GO FAIR Foundation, https://www.gofair.foundation/r1</obo:IAO_0000119>
+        <obo:IAO_0000119 xml:lang="en">Wilkinson, M. D. et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data, 3:160018. https://doi.org/10.1038/sdata.2016.18</obo:IAO_0000119>
+        <rdf1:acronym>R1</rdf1:acronym>
+        <rdfs:comment xml:lang="en">Degree to which the resource and its metadata are described with a plurality of accurate and relevant attributes.</rdfs:comment>
+        <rdfs:label xml:lang="en">FAIR R1 richly described with accurate and relevant attributes characteristic</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- https://purl.org/oquo-fair-qm#R1_1Characteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo-fair-qm#R1_1Characteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">Degree to which the resource and its metadata are released with a clear and accessible data usage license, so that both humans and machines can determine the conditions under which they can be reused. For ontologies, this means declaring a license in the ontology metadata (e.g. with dcterms:license), preferably by referencing a standard license through its IRI (e.g. a Creative Commons license).</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GO FAIR Foundation, https://www.gofair.foundation/r1-1</obo:IAO_0000119>
+        <obo:IAO_0000119 xml:lang="en">Wilkinson, M. D. et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data, 3:160018. https://doi.org/10.1038/sdata.2016.18</obo:IAO_0000119>
+        <rdf1:acronym>R1.1</rdf1:acronym>
+        <rdfs:comment xml:lang="en">Degree to which the resource and its metadata are released with a clear and accessible usage license.</rdfs:comment>
+        <rdfs:label xml:lang="en">FAIR R1.1 clear and accessible usage license characteristic</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- https://purl.org/oquo-fair-qm#R1_2Characteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo-fair-qm#R1_2Characteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">Degree to which the resource and its metadata are associated with detailed provenance information describing where they come from, who created or contributed to them, how and when they were generated, and how they have evolved. For ontologies, this includes their creators and contributors, creation and modification dates, version information, prior versions, and the sources of the definitions of their entities, preferably expressed with standard vocabularies (e.g. Dublin Core, PROV-O or PAV).</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GO FAIR Foundation, https://www.gofair.foundation/r1-2</obo:IAO_0000119>
+        <obo:IAO_0000119 xml:lang="en">Wilkinson, M. D. et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data, 3:160018. https://doi.org/10.1038/sdata.2016.18</obo:IAO_0000119>
+        <rdf1:acronym>R1.2</rdf1:acronym>
+        <rdfs:comment xml:lang="en">Degree to which the resource and its metadata are associated with detailed provenance.</rdfs:comment>
+        <rdfs:label xml:lang="en">FAIR R1.2 detailed provenance characteristic</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- https://purl.org/oquo-fair-qm#R1_3Characteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo-fair-qm#R1_3Characteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <obo:IAO_0000115 xml:lang="en">Degree to which the resource and its metadata comply with the standards and good practices agreed by the community of the domain in which they are used, regarding format, organisation, vocabulary and metadata. For ontologies, this may involve adhering to community guidelines such as the OBO Foundry principles or the metadata recommendations of specific ontology repositories.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GO FAIR Foundation, https://www.gofair.foundation/r1-3</obo:IAO_0000119>
+        <obo:IAO_0000119 xml:lang="en">Wilkinson, M. D. et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data, 3:160018. https://doi.org/10.1038/sdata.2016.18</obo:IAO_0000119>
+        <rdf1:acronym>R1.3</rdf1:acronym>
+        <rdfs:comment xml:lang="en">Degree to which the resource and its metadata meet domain-relevant community standards.</rdfs:comment>
+        <rdfs:label xml:lang="en">FAIR R1.3 domain-relevant community standards characteristic</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- https://purl.org/oquo-fair-qm#ReusableCharacteristic -->
+
+    <owl:Class rdf:about="https://purl.org/oquo-fair-qm#ReusableCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo-fair-qm#R1Characteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/QualityModel#hasSubCharacteristic"/>
+                <owl:allValuesFrom rdf:resource="https://purl.org/oquo-fair-qm#R1Characteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">Degree to which the resource and its metadata are described well enough to be replicated and/or combined in different settings, which is the ultimate goal of FAIR. Reusability requires a plurality of accurate and relevant attributes, including a clear usage licence, detailed provenance and compliance with domain-relevant community standards. It is assessed through the subcharacteristic R1 and its refinements R1.1 to R1.3.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">GO FAIR Foundation, https://www.gofair.foundation/fair-principles</obo:IAO_0000119>
+        <obo:IAO_0000119 xml:lang="en">Wilkinson, M. D. et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data, 3:160018. https://doi.org/10.1038/sdata.2016.18</obo:IAO_0000119>
+        <rdf1:acronym>R</rdf1:acronym>
+        <rdfs:comment xml:lang="en">Degree to which the resource and its metadata are described well enough to be reused.</rdfs:comment>
+        <rdfs:label xml:lang="en">FAIR reusable characteristic</rdfs:label>
+    </owl:Class>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- https://purl.org/oquo-fair-qm#PercentageScale -->
+
+    <owl:NamedIndividual rdf:about="https://purl.org/oquo-fair-qm#PercentageScale">
+        <rdf:type rdf:resource="http://www.wurvoc.org/vocabularies/om-1.8/Ratio_scale"/>
+        <QualityModel:hasRankigFunction rdf:resource="http://purl.org/net/QualityModel#HigherBest"/>
+        <QualityModel:hasLowerBoundary rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</QualityModel:hasLowerBoundary>
+        <QualityModel:hasUpperBoundary rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">100</QualityModel:hasUpperBoundary>
+        <obo:IAO_0000112 xml:lang="en">A value of 75 for the FAIR findable characteristic means that the evaluated resource fulfils 75% of what the findability principle requires.</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">Ratio scale used by the FAIR quality model to express the degree of compliance of an evaluated resource with a FAIR principle or sub-principle, as a percentage ranging from 0 (no compliance at all) to 100 (full compliance). Being a ratio scale, 0 denotes the total absence of compliance and values can be compared proportionally. Higher values are better. The raw values of the metrics of a framework integrated with this quality model must be converted to this scale before being aggregated into subcharacteristics and characteristics.</obo:IAO_0000115>
+        <rdfs:comment xml:lang="en">Percentage scale (0-100) of degree of compliance with the FAIR principles.</rdfs:comment>
+        <rdfs:label xml:lang="en">FAIR percentage scale</rdfs:label>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.wurvoc.org/vocabularies/om-1.8/percent -->
+
+    <owl:NamedIndividual rdf:about="http://www.wurvoc.org/vocabularies/om-1.8/percent">
+        <rdf:type rdf:resource="http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure"/>
+        <QualityModel:symbol>%</QualityModel:symbol>
+        <rdfs:comment xml:lang="en">Unit of measure representing one hundredth of a whole.</rdfs:comment>
+        <rdfs:label xml:lang="en">percent</rdfs:label>
+    </owl:NamedIndividual>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://purl.org/oquo-fair-qm#A1Characteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo-fair-qm#A1_1Characteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo-fair-qm#A1_2Characteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo-fair-qm#A2Characteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo-fair-qm#AccessibleCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo-fair-qm#F1Characteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo-fair-qm#F2Characteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo-fair-qm#F3Characteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo-fair-qm#F4Characteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo-fair-qm#FindableCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo-fair-qm#I1Characteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo-fair-qm#I2Characteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo-fair-qm#I3Characteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo-fair-qm#InteroperableCharacteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo-fair-qm#R1Characteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo-fair-qm#R1_1Characteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo-fair-qm#R1_2Characteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo-fair-qm#R1_3Characteristic"/>
+            <rdf:Description rdf:about="https://purl.org/oquo-fair-qm#ReusableCharacteristic"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
