@@ -15,7 +15,9 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:QualityModel="http://purl.org/net/QualityModel#">
-    <owl:Ontology rdf:about="https://purl.org/oquo-core"/>
+    <owl:Ontology rdf:about="https://purl.org/oquo-core">
+        <owl:versionIRI rdf:resource="https://purl.org/oquo-core-dev"/>
+    </owl:Ontology>
     
 
 
