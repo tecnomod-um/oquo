@@ -15,9 +15,9 @@ jobs:
           distribution: 'temurin'
           java-version: '8'
       # Python setup
-      - uses: actions/setup-python@v3
+      - uses: uses: actions/setup-python@v7
         with:
-          python-version: '3.9'
+          python-version: '3.9.25'
 
       - name: OQuaRE module
         uses: Emdien/oquare-metrics@v2.1
