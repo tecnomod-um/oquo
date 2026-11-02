@@ -15,7 +15,7 @@ jobs:
           distribution: 'temurin'
           java-version: '8'
       # Python setup
-      - uses: uses: actions/setup-python@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.9.25'
 
