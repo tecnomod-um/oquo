@@ -15,7 +15,23 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:QualityModel="http://purl.org/net/QualityModel#">
-    <owl:Ontology rdf:about="https://purl.org/oquo-core"/>
+    <owl:Ontology rdf:about="https://purl.org/oquo-core">
+        <owl:versionIRI rdf:resource="https://purl.org/oquo-core/v2.0.0"/>
+        <dc:description xml:lang="en">OQUO (Ontology QUality Ontology) is a framework-agnostic ontology for describing quality models for ontologies and the results of ontology quality evaluations in a common, machine-readable format. The OQUO core provides the general vocabulary needed to define quality models, consisting of quality characteristics and subcharacteristics, the metrics that measure them and the scales on which they are measured, together with the conversions between raw metric scales and the scales of quality models, which can be defined as cardinal to ordinal, cardinal to nominal, ordinal to ordinal and cardinal to cardinal mappings. It also represents the results of quality evaluations, including the observations made on the evaluated entities, the measured values, the evaluation context and configuration, and the issues detected, classified by severity and by non conformity. Specific quality models (e.g. OQuaRE or FAIR) are defined in separate modules that extend the core, and the metrics, raw scales and issue types of concrete evaluation frameworks are described in further modules that extend those quality models, so that the results of independently developed tools can be represented, compared and aggregated within a single model. OQUO reuses existing ontologies such as the Quality Model Ontology (QMO), the Evaluation Ontology (EVAL), the Extensible Observation Ontology (OBOE), and the Information Problem Ontology (IPO).</dc:description>
+        <dc:title xml:lang="en">OQUO core</dc:title>
+        <dc:creator>Francisco Abad-Navarro</dc:creator>
+        <dc:contributor>Francisco Abad-Navarro</dc:contributor>
+        <dc:contributor>Astrid Duque-Ramos</dc:contributor>
+        <dc:contributor>Belén Juanes-Cortes</dc:contributor>
+        <dc:contributor>Gonzalo Nicolas-Martinez</dc:contributor>
+        <dc:contributor>Manuel Quesada-Martinez</dc:contributor>
+        <dc:contributor>Jesualdo Tomas Fernandez-Breis</dc:contributor>
+        <dc:publisher>Universidad de Murcia</dc:publisher>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-04-21</terms:created>
+        <terms:license rdf:resource="http://www.apache.org/licenses/LICENSE-2.0"/>
+        <vann:preferredNamespacePrefix>oquo</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>https://purl.org/oquo#</vann:preferredNamespaceUri>
+    </owl:Ontology>
     
 
 
@@ -148,23 +164,65 @@ We also have the outstanding issue of how to aim different definitions to differ
     
 
 
+    <!-- http://purl.org/dc/elements/1.1/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor">
+        <rdfs:comment xml:lang="en-us">Examples of a Contributor include a person, an organization, or a service. Typically, the name of a Contributor should be used to indicate the entity.</rdfs:comment>
+        <rdfs:label xml:lang="en-us">Contributor</rdfs:label>
+        <skos:definition xml:lang="en-us">An entity responsible for making contributions to the resource.</skos:definition>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- http://purl.org/dc/elements/1.1/creator -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator">
-        <rdfs:label>creator</rdfs:label>
+        <rdfs:comment xml:lang="en-us">Examples of a Creator include a person, an organization, or a service. Typically, the name of a Creator should be used to indicate the entity.</rdfs:comment>
+        <rdfs:label xml:lang="en-us">Creator</rdfs:label>
+        <skos:definition xml:lang="en-us">An entity primarily responsible for making the resource.</skos:definition>
     </owl:AnnotationProperty>
     
 
 
     <!-- http://purl.org/dc/elements/1.1/description -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description">
+        <rdfs:comment xml:lang="en-us">Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource.</rdfs:comment>
+        <rdfs:label xml:lang="en-us">Description</rdfs:label>
+        <rdfs:label>description</rdfs:label>
+        <skos:definition xml:lang="en-us">An account of the resource.</skos:definition>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/publisher -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/publisher">
+        <rdfs:comment xml:lang="en-us">Examples of a Publisher include a person, an organization, or a service. Typically, the name of a Publisher should be used to indicate the entity.</rdfs:comment>
+        <rdfs:label xml:lang="en-us">Publisher</rdfs:label>
+        <skos:definition xml:lang="en-us">An entity responsible for making the resource available.</skos:definition>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/source -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/source">
+        <rdfs:comment xml:lang="en-us">The described resource may be derived from the related resource in whole or in part. Recommended best practice is to identify the related resource by means of a string conforming to a formal identification system.</rdfs:comment>
+        <rdfs:label xml:lang="en-us">Source</rdfs:label>
+        <skos:definition xml:lang="en-us">A related resource from which the described resource is derived.</skos:definition>
+    </owl:AnnotationProperty>
     
 
 
     <!-- http://purl.org/dc/elements/1.1/title -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title">
+        <rdfs:comment xml:lang="en-us">Typically, a Title will be a name by which the resource is formally known.</rdfs:comment>
+        <rdfs:label xml:lang="en-us">Title</rdfs:label>
+        <rdfs:label>title</rdfs:label>
+        <skos:definition xml:lang="en-us">A name given to the resource.</skos:definition>
+    </owl:AnnotationProperty>
     
 
 
@@ -339,6 +397,23 @@ We also have the outstanding issue of how to aim different definitions to differ
         <rdfs:comment>The recommendation for a given situation.</rdfs:comment>
         <rdfs:label>has recommendation</rdfs:label>
     </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
     
 
 
@@ -943,18 +1018,6 @@ A Symptom may indicate many Issues, such as a Symptom of fever can indicate many
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://purl.org/dc/elements/1.1/description -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
-    
-
-
-    <!-- http://purl.org/dc/elements/1.1/title -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
     
 
 
@@ -1999,12 +2062,6 @@ The Issue can have a set of Actions (Procedures) that will fix it and also a Iss
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/description">
-        <rdfs:label>description</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/title">
-        <rdfs:label>title</rdfs:label>
-    </rdf:Description>
     <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#seeAlso">
         <rdfs:comment>Further information about the subject resource.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2000/01/rdf-schema#"/>

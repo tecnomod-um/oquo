@@ -16,7 +16,23 @@
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:QualityModel="http://purl.org/net/QualityModel#">
     <owl:Ontology rdf:about="https://purl.org/oquo-oquare-qm">
+        <owl:versionIRI rdf:resource="https://purl.org/oquo-oquare-qm/v1.0.0"/>
         <owl:imports rdf:resource="https://purl.org/oquo-core"/>
+        <dc:title xml:lang="en">OQUO OQuaRE quality model</dc:title>
+        <dc:description xml:lang="en">OQUO module that defines the OQuaRE quality model for ontologies. OQuaRE adapts the SQuaRE (ISO/IEC 25000) standard for software product quality to ontologies, defining a set of quality characteristics, namely structural, functional adequacy, reliability, operability, maintainability, compatibility, transferability and quality in use, which are refined into subcharacteristics related through hasSubCharacteristic. The module also defines the OQuaRE five categories scale, an ordinal scale ranging from 1 (not acceptable) to 5 (exceeds the requirements) on which characteristics and subcharacteristics are measured. The module extends the OQUO core, and can in turn be extended by framework modules that define metrics associated with its characteristics and the conversions from their raw scales into the OQuaRE five categories scale.</dc:description>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-10-29</terms:created>
+        <terms:license rdf:resource="http://www.apache.org/licenses/LICENSE-2.0"/>
+        <dc:source xml:lang="en">Duque-Ramos, A., Fernández-Breis, J. T., Stevens, R., Aussenac-Gilles, N. (2011). OQuaRE: A SQuaRE-based approach for evaluating the quality of ontologies. Journal of Research and Practice in Information Technology, 43(2), 159-176.</dc:source>
+        <dc:creator>Francisco Abad-Navarro</dc:creator>
+        <dc:contributor>Francisco Abad-Navarro</dc:contributor>
+        <dc:contributor>Astrid Duque-Ramos</dc:contributor>
+        <dc:contributor>Belén Juanes-Cortes</dc:contributor>
+        <dc:contributor>Gonzalo Nicolas-Martinez</dc:contributor>
+        <dc:contributor>Manuel Quesada-Martinez</dc:contributor>
+        <dc:contributor>Jesualdo Tomas Fernandez-Breis</dc:contributor>
+        <dc:publisher>Universidad de Murcia</dc:publisher>
+        <vann:preferredNamespacePrefix>oquo</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>https://purl.org/oquo#</vann:preferredNamespaceUri>
     </owl:Ontology>
     
 

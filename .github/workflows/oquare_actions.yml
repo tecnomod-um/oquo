@@ -17,7 +17,7 @@ jobs:
       # Python setup
       - uses: actions/setup-python@v3
         with:
-          python-version: '3.9'
+          python-version: '3.9.25'
 
       - name: OQuaRE module
         uses: Emdien/oquare-metrics@v2.1
