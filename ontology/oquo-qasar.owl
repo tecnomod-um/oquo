@@ -16,9 +16,9 @@
      xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="https://purl.org/oquo-qasar">
-        <owl:imports rdf:resource="https://purl.org/oquo-oquare"/>
-        <owl:imports rdf:resource="https://purl.org/oquo-huron"/>
-        <owl:imports rdf:resource="https://purl.org/oquo-ontoenrich"/>
+        <owl:imports rdf:resource="https://purl.org/oquo-oquare/v1.0.0"/>
+        <owl:imports rdf:resource="https://purl.org/oquo-huron/v1.0.0"/>
+        <owl:imports rdf:resource="https://purl.org/oquo-ontoenrich/v1.0.0"/>
     </owl:Ontology>
 </rdf:RDF>
 
