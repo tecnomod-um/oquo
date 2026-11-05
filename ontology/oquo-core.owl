@@ -16,7 +16,7 @@
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:QualityModel="http://purl.org/net/QualityModel#">
     <owl:Ontology rdf:about="https://purl.org/oquo-core">
-        <owl:versionIRI rdf:resource="https://purl.org/oquo-core/v2.0.0"/>
+        <owl:versionIRI rdf:resource="https://purl.org/oquo-core/v2.1.0"/>
         <dc:description xml:lang="en">OQUO (Ontology QUality Ontology) is a framework-agnostic ontology for describing quality models for ontologies and the results of ontology quality evaluations in a common, machine-readable format. The OQUO core provides the general vocabulary needed to define quality models, consisting of quality characteristics and subcharacteristics, the metrics that measure them and the scales on which they are measured, together with the conversions between raw metric scales and the scales of quality models, which can be defined as cardinal to ordinal, cardinal to nominal, ordinal to ordinal and cardinal to cardinal mappings. It also represents the results of quality evaluations, including the observations made on the evaluated entities, the measured values, the evaluation context and configuration, and the issues detected, classified by severity and by non conformity. Specific quality models (e.g. OQuaRE or FAIR) are defined in separate modules that extend the core, and the metrics, raw scales and issue types of concrete evaluation frameworks are described in further modules that extend those quality models, so that the results of independently developed tools can be represented, compared and aggregated within a single model. OQUO reuses existing ontologies such as the Quality Model Ontology (QMO), the Evaluation Ontology (EVAL), the Extensible Observation Ontology (OBOE), and the Information Problem Ontology (IPO).</dc:description>
         <dc:title xml:lang="en">OQUO core</dc:title>
         <dc:creator>Francisco Abad-Navarro</dc:creator>
@@ -879,7 +879,15 @@ A Symptom may indicate many Issues, such as a Symptom of fever can indicate many
     <owl:ObjectProperty rdf:about="https://purl.org/oquo#hasInputCardinalInterval">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://purl.org/oquo#ScalePointMapping"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://purl.org/oquo#CardinalToCardinalScalePointMapping"/>
+                    <rdf:Description rdf:about="https://purl.org/oquo#CardinalToNominalScalePointMapping"/>
+                    <rdf:Description rdf:about="https://purl.org/oquo#CardinalToOrdinalScalePointMapping"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="https://purl.org/oquo#Interval"/>
         <rdfs:comment>The input cardinal interval of an scale point mapping.</rdfs:comment>
         <rdfs:label>has input cardinal interval</rdfs:label>
@@ -903,7 +911,18 @@ A Symptom may indicate many Issues, such as a Symptom of fever can indicate many
 
     <owl:ObjectProperty rdf:about="https://purl.org/oquo#hasInputScaleCategory">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://purl.org/oquo#ScalePointMapping"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://purl.org/oquo#NominalToCardinalScalePointMapping"/>
+                    <rdf:Description rdf:about="https://purl.org/oquo#NominalToNominalScalePointMapping"/>
+                    <rdf:Description rdf:about="https://purl.org/oquo#NominalToOrdinalScalePointMapping"/>
+                    <rdf:Description rdf:about="https://purl.org/oquo#OrdinalToCardinalScalePointMapping"/>
+                    <rdf:Description rdf:about="https://purl.org/oquo#OrdinalToNominalScalePointMapping"/>
+                    <rdf:Description rdf:about="https://purl.org/oquo#OrdinalToOrdinalScalePointMapping"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.wurvoc.org/vocabularies/om-1.8/Measurement_scale_category"/>
         <rdfs:comment>Relationship between an ordinal to ordinal scale point mapping and a measurement scale category.</rdfs:comment>
         <rdfs:label>has input scale category</rdfs:label>
@@ -970,7 +989,18 @@ A Symptom may indicate many Issues, such as a Symptom of fever can indicate many
 
     <owl:ObjectProperty rdf:about="https://purl.org/oquo#hasOutputScaleCategory">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://purl.org/oquo#ScalePointMapping"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://purl.org/oquo#CardinalToNominalScalePointMapping"/>
+                    <rdf:Description rdf:about="https://purl.org/oquo#CardinalToOrdinalScalePointMapping"/>
+                    <rdf:Description rdf:about="https://purl.org/oquo#NominalToNominalScalePointMapping"/>
+                    <rdf:Description rdf:about="https://purl.org/oquo#NominalToOrdinalScalePointMapping"/>
+                    <rdf:Description rdf:about="https://purl.org/oquo#OrdinalToNominalScalePointMapping"/>
+                    <rdf:Description rdf:about="https://purl.org/oquo#OrdinalToOrdinalScalePointMapping"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.wurvoc.org/vocabularies/om-1.8/Measurement_scale_category"/>
         <rdfs:comment>The output category of a scale point mapping.</rdfs:comment>
         <rdfs:label>has output scale category</rdfs:label>
@@ -1152,6 +1182,27 @@ A Symptom may indicate many Issues, such as a Symptom of fever can indicate many
         <obo:IAO_0000112>The numbers 1 and 5 in the interval [1, 5]</obo:IAO_0000112>
         <rdfs:comment>The values of an interval</rdfs:comment>
         <rdfs:label>has interval value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://purl.org/oquo#hasOutputCardinalValue -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.org/oquo#hasOutputCardinalValue">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://purl.org/oquo#NominalToCardinalScalePointMapping"/>
+                    <rdf:Description rdf:about="https://purl.org/oquo#OrdinalToCardinalScalePointMapping"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <obo:IAO_0000112>The value 33.33 in the mapping that converts the category with rank 3 of an ordinal scale whose highest category has rank 9 into a percentage scale.</obo:IAO_0000112>
+        <obo:IAO_0000115>Relates a scale point mapping whose input is a scale category (an ordinal to cardinal or a nominal to cardinal scale point mapping) with the value of the output cardinal scale onto which the input category of the mapping is converted. Every quality value measured on the input scale that corresponds to the input category of the mapping is converted into this value of the output cardinal scale. The value should fall within the boundaries of the output scale. Each ordinal to cardinal and nominal to cardinal scale point mapping has exactly one output cardinal value.</obo:IAO_0000115>
+        <rdfs:comment>The value of the output cardinal scale onto which the input category of an ordinal to cardinal or nominal to cardinal scale point mapping is converted.</rdfs:comment>
+        <rdfs:label>has output cardinal value</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1901,6 +1952,276 @@ The Issue can have a set of Actions (Procedures) that will fix it and also a Iss
         <rdfs:subClassOf rdf:resource="https://purl.org/oquo#IssueBySeverity"/>
         <rdfs:comment>A minor incident with low impact</rdfs:comment>
         <rdfs:label>minor issue</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#NominalToCardinalScaleConversion -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#NominalToCardinalScaleConversion">
+        <rdfs:subClassOf rdf:resource="https://purl.org/oquo#ScaleConversion"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/oquo#hasInputScale"/>
+                <owl:someValuesFrom rdf:resource="http://www.wurvoc.org/vocabularies/om-1.8/Nominal_scale"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/oquo#hasOutputScale"/>
+                <owl:someValuesFrom rdf:resource="http://www.wurvoc.org/vocabularies/om-1.8/Cardinal_scale"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/oquo#hasScalePointMapping"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#NominalToCardinalScalePointMapping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Defines the conversion from a nominal scale to a cardinal scale.</rdfs:comment>
+        <rdfs:label>nominal to cardinal scale conversion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#NominalToCardinalScalePointMapping -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#NominalToCardinalScalePointMapping">
+        <rdfs:subClassOf rdf:resource="https://purl.org/oquo#ScalePointMapping"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/oquo#hasInputScaleCategory"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.wurvoc.org/vocabularies/om-1.8/Measurement_scale_category"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/oquo#hasOutputCardinalValue"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000112>A metric that reports the type of license of an ontology on a nominal scale (e.g. CC0, CC BY, proprietary, none) can be converted into a percentage of compliance with four mappings, such as CC0 onto 100, CC BY onto 100, proprietary onto 40 and none onto 0.</obo:IAO_0000112>
+        <obo:IAO_0000115>A scale point mapping that converts a category of an input nominal scale into a value of an output cardinal scale. Each mapping has exactly one input scale category (hasInputScaleCategory) and one output cardinal value (hasOutputCardinalValue): every quality value that corresponds to the input category is converted into the output value. A nominal to cardinal scale conversion contains one of these mappings for each category of the input scale. Since the categories of a nominal scale are not ordered, the output values express the judgement of the quality model on how each category contributes to quality. The output values should fall within the boundaries of the output scale.</obo:IAO_0000115>
+        <rdfs:comment>Represents the mapping of a category of a nominal scale onto a value of a cardinal scale.</rdfs:comment>
+        <rdfs:label>nominal to cardinal scale point mapping</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#NominalToNominalScaleConversion -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#NominalToNominalScaleConversion">
+        <rdfs:subClassOf rdf:resource="https://purl.org/oquo#ScaleConversion"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/oquo#hasInputScale"/>
+                <owl:someValuesFrom rdf:resource="http://www.wurvoc.org/vocabularies/om-1.8/Nominal_scale"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/oquo#hasOutputScale"/>
+                <owl:someValuesFrom rdf:resource="http://www.wurvoc.org/vocabularies/om-1.8/Nominal_scale"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/oquo#hasScalePointMapping"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#NominalToNominalScalePointMapping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Defines the conversion between nominal scales.</rdfs:comment>
+        <rdfs:label>nominal to nominal scale conversion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#NominalToNominalScalePointMapping -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#NominalToNominalScalePointMapping">
+        <rdfs:subClassOf rdf:resource="https://purl.org/oquo#ScalePointMapping"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/oquo#hasInputScaleCategory"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.wurvoc.org/vocabularies/om-1.8/Measurement_scale_category"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/oquo#hasOutputScaleCategory"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.wurvoc.org/vocabularies/om-1.8/Measurement_scale_category"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000112>The categories pass and fail of the nominal scale of one framework can be converted into the categories ok and error of the nominal scale of another framework, with the mappings pass onto ok and fail onto error.</obo:IAO_0000112>
+        <obo:IAO_0000115>A scale point mapping that converts a category of an input nominal scale into a category of an output nominal scale. Each mapping has exactly one input scale category (hasInputScaleCategory) and one output scale category (hasOutputScaleCategory). A nominal to nominal scale conversion contains one of these mappings for each category of the input scale, and several input categories may be converted into the same output category. It can be used, for instance, to harmonise the categories used by different evaluation frameworks.</obo:IAO_0000115>
+        <rdfs:comment>Represents the mapping of a category of a nominal scale onto a category of another nominal scale.</rdfs:comment>
+        <rdfs:label>nominal to nominal scale point mapping</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#NominalToOrdinalScaleConversion -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#NominalToOrdinalScaleConversion">
+        <rdfs:subClassOf rdf:resource="https://purl.org/oquo#ScaleConversion"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/oquo#hasInputScale"/>
+                <owl:someValuesFrom rdf:resource="http://www.wurvoc.org/vocabularies/om-1.8/Nominal_scale"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/oquo#hasOutputScale"/>
+                <owl:someValuesFrom rdf:resource="http://www.wurvoc.org/vocabularies/om-1.8/Ordinal_scale"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/oquo#hasScalePointMapping"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#NominalToOrdinalScalePointMapping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Defines the conversion from a nominal scale to an ordinal scale.</rdfs:comment>
+        <rdfs:label>nominal to ordinal scale conversion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#NominalToOrdinalScalePointMapping -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#NominalToOrdinalScalePointMapping">
+        <rdfs:subClassOf rdf:resource="https://purl.org/oquo#ScalePointMapping"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/oquo#hasInputScaleCategory"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.wurvoc.org/vocabularies/om-1.8/Measurement_scale_category"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/oquo#hasOutputScaleCategory"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.org/net/QualityModel#OrdinalScaleItem"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000112>A metric that reports the serialisation format of an ontology on a nominal scale (e.g. RDF/XML, Turtle, OBO, proprietary) can be converted into a five categories ordinal scale with mappings such as RDF/XML onto category 5, Turtle onto category 5, OBO onto category 3 and proprietary onto category 1.</obo:IAO_0000112>
+        <obo:IAO_0000115>A scale point mapping that converts a category of an input nominal scale into a category of an output ordinal scale. Each mapping has exactly one input scale category (hasInputScaleCategory) and one output ordinal scale category (hasOutputScaleCategory). A nominal to ordinal scale conversion contains one of these mappings for each category of the input scale, and several input categories may be converted into the same output category. Since the categories of a nominal scale are not ordered, the output categories express the judgement of the quality model on how each input category contributes to quality.</obo:IAO_0000115>
+        <rdfs:comment>Represents the mapping of a category of a nominal scale onto a category of an ordinal scale.</rdfs:comment>
+        <rdfs:label>nominal to ordinal scale point mapping</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#OrdinalToCardinalScaleConversion -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#OrdinalToCardinalScaleConversion">
+        <rdfs:subClassOf rdf:resource="https://purl.org/oquo#ScaleConversion"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/oquo#hasInputScale"/>
+                <owl:someValuesFrom rdf:resource="http://www.wurvoc.org/vocabularies/om-1.8/Ordinal_scale"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/oquo#hasOutputScale"/>
+                <owl:someValuesFrom rdf:resource="http://www.wurvoc.org/vocabularies/om-1.8/Cardinal_scale"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/oquo#hasScalePointMapping"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#OrdinalToCardinalScalePointMapping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Defines the conversion from an ordinal scale to a cardinal scale.</rdfs:comment>
+        <rdfs:label>ordinal to cardinal scale conversion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#OrdinalToCardinalScalePointMapping -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#OrdinalToCardinalScalePointMapping">
+        <rdfs:subClassOf rdf:resource="https://purl.org/oquo#ScalePointMapping"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/oquo#hasInputScaleCategory"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.org/net/QualityModel#OrdinalScaleItem"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/oquo#hasOutputCardinalValue"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000112>A metric whose raw values are measured on an ordinal scale with categories of ranks 0, 3 and 9 can be converted into a percentage scale from 0 to 100 with three mappings: the category with rank 0 onto 0, the category with rank 3 onto 33.33, and the category with rank 9 onto 100.</obo:IAO_0000112>
+        <obo:IAO_0000115>A scale point mapping that converts a category of an input ordinal scale into a value of an output cardinal scale. Each mapping has exactly one input scale category (hasInputScaleCategory) and one output cardinal value (hasOutputCardinalValue): every quality value that corresponds to the input category is converted into the output value. An ordinal to cardinal scale conversion contains one of these mappings for each category of the input scale, thus assigning a numeric value to every category. The output values should respect the order of the categories of the input scale and fall within the boundaries of the output scale.</obo:IAO_0000115>
+        <rdfs:comment>Represents the mapping of a category of an ordinal scale onto a value of a cardinal scale.</rdfs:comment>
+        <rdfs:label>ordinal to cardinal scale point mapping</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#OrdinalToNominalScaleConversion -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#OrdinalToNominalScaleConversion">
+        <rdfs:subClassOf rdf:resource="https://purl.org/oquo#ScaleConversion"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/oquo#hasInputScale"/>
+                <owl:someValuesFrom rdf:resource="http://www.wurvoc.org/vocabularies/om-1.8/Ordinal_scale"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/oquo#hasOutputScale"/>
+                <owl:someValuesFrom rdf:resource="http://www.wurvoc.org/vocabularies/om-1.8/Nominal_scale"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/oquo#hasScalePointMapping"/>
+                <owl:someValuesFrom rdf:resource="https://purl.org/oquo#OrdinalToNominalScalePointMapping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Defines the conversion from an ordinal scale to a nominal scale.</rdfs:comment>
+        <rdfs:label>ordinal to nominal scale conversion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/oquo#OrdinalToNominalScalePointMapping -->
+
+    <owl:Class rdf:about="https://purl.org/oquo#OrdinalToNominalScalePointMapping">
+        <rdfs:subClassOf rdf:resource="https://purl.org/oquo#ScalePointMapping"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/oquo#hasInputScaleCategory"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.org/net/QualityModel#OrdinalScaleItem"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/oquo#hasOutputScaleCategory"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.wurvoc.org/vocabularies/om-1.8/Measurement_scale_category"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000112>The five categories of an ordinal scale can be converted into the categories acceptable and not acceptable of a nominal scale, with categories 1 and 2 mapped onto not acceptable and categories 3, 4 and 5 mapped onto acceptable.</obo:IAO_0000112>
+        <obo:IAO_0000115>A scale point mapping that converts a category of an input ordinal scale into a category of an output nominal scale. Each mapping has exactly one input ordinal scale category (hasInputScaleCategory) and one output scale category (hasOutputScaleCategory). An ordinal to nominal scale conversion contains one of these mappings for each category of the input scale, and several input categories may be converted into the same output category. The order of the input categories is not preserved in the output scale.</obo:IAO_0000115>
+        <rdfs:comment>Represents the mapping of a category of an ordinal scale onto a category of a nominal scale.</rdfs:comment>
+        <rdfs:label>ordinal to nominal scale point mapping</rdfs:label>
     </owl:Class>
     
 
