@@ -80,7 +80,7 @@ oquo:EvaluationShape
     ] ;
     
     sh:closed true ;
-    sh:ignoredProperties ( rdf:type owl:topDataProperty owl:topObjectProperty ) ;
+        sh:ignoredProperties ( rdf:type owl:topDataProperty owl:topObjectProperty prov:influenced prov:wasInfluencedBy ) ;
     .
 
 
@@ -150,7 +150,7 @@ oquo:QualityValueShape
     ] ;
     
     sh:closed true ;
-    sh:ignoredProperties ( rdf:type owl:topDataProperty owl:topObjectProperty ) ;
+    sh:ignoredProperties ( rdf:type owl:topDataProperty owl:topObjectProperty prov:wasInfluencedBy ) ;
     .
 
 
@@ -346,7 +346,7 @@ oquo:MeasuredValueShape
     ] ;
     
     sh:closed true ;
-    sh:ignoredProperties ( rdf:type owl:topDataProperty owl:topObjectProperty ) ;
+    sh:ignoredProperties ( rdf:type owl:topDataProperty owl:topObjectProperty prov:wasInfluencedBy ) ;
     .
 
 
