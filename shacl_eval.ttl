@@ -69,6 +69,16 @@ oquo:EvaluationShape
         sh:severity sh:Violation ;
     ] ;
     
+    sh:property [
+        sh:path prov:wasAssociatedWith ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path prov:generated ;
+        sh:severity sh:Violation ;
+    ] ;
+    
     sh:closed true ;
     sh:ignoredProperties ( rdf:type owl:topDataProperty owl:topObjectProperty ) ;
     .
@@ -126,6 +136,16 @@ oquo:QualityValueShape
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:class qm:QualityMeasure ;
+        sh:severity sh:Violation ;
+    ] ;
+
+    sh:property [
+        sh:path prov:wasGeneratedBy ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path prov:wasAttributedTo ;
         sh:severity sh:Violation ;
     ] ;
     
@@ -314,6 +334,16 @@ oquo:MeasuredValueShape
         sh:class qm:QualityMeasure ;
         sh:severity sh:Violation ;
     ] ;
+
+    sh:property [
+        sh:path prov:wasGeneratedBy ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path prov:wasAttributedTo ;
+        sh:severity sh:Violation ;
+    ] ;
     
     sh:closed true ;
     sh:ignoredProperties ( rdf:type owl:topDataProperty owl:topObjectProperty ) ;
@@ -434,7 +464,7 @@ oquo:ProvActivityShape
         sh:severity sh:Violation ;
     ] ;
     
-    sh:closed true ;
+    sh:closed false ;
     sh:ignoredProperties ( rdf:type owl:topDataProperty owl:topObjectProperty ) ;
     .
 
@@ -452,6 +482,6 @@ oquo:ProvEntityShape
         sh:severity sh:Violation ;
     ] ;
     
-    sh:closed true ;
+    sh:closed false ;
     sh:ignoredProperties ( rdf:type owl:topDataProperty owl:topObjectProperty ) ;
     .
