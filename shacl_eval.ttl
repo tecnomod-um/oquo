@@ -11,7 +11,8 @@
 @prefix btl2:  <http://purl.org/biotop/btl2.owl#> .
 @prefix om: <http://www.wurvoc.org/vocabularies/om-1.8/> .
 @prefix ipo: <http://purl.org/ipo/core#> .
-@prefix iao: <http://purl.obolibrary.org/obo/IAO_>
+@prefix iao: <http://purl.obolibrary.org/obo/IAO_> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 
 
 oquo:EvaluationShape
@@ -68,8 +69,18 @@ oquo:EvaluationShape
         sh:severity sh:Violation ;
     ] ;
     
+    sh:property [
+        sh:path prov:wasAssociatedWith ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path prov:generated ;
+        sh:severity sh:Violation ;
+    ] ;
+    
     sh:closed true ;
-    sh:ignoredProperties ( rdf:type owl:topDataProperty owl:topObjectProperty ) ;
+        sh:ignoredProperties ( rdf:type owl:topDataProperty owl:topObjectProperty prov:influenced prov:wasInfluencedBy ) ;
     .
 
 
@@ -127,9 +138,19 @@ oquo:QualityValueShape
         sh:class qm:QualityMeasure ;
         sh:severity sh:Violation ;
     ] ;
+
+    sh:property [
+        sh:path prov:wasGeneratedBy ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path prov:wasAttributedTo ;
+        sh:severity sh:Violation ;
+    ] ;
     
     sh:closed true ;
-    sh:ignoredProperties ( rdf:type owl:topDataProperty owl:topObjectProperty ) ;
+    sh:ignoredProperties ( rdf:type owl:topDataProperty owl:topObjectProperty prov:wasInfluencedBy ) ;
     .
 
 
@@ -313,9 +334,19 @@ oquo:MeasuredValueShape
         sh:class qm:QualityMeasure ;
         sh:severity sh:Violation ;
     ] ;
+
+    sh:property [
+        sh:path prov:wasGeneratedBy ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path prov:wasAttributedTo ;
+        sh:severity sh:Violation ;
+    ] ;
     
     sh:closed true ;
-    sh:ignoredProperties ( rdf:type owl:topDataProperty owl:topObjectProperty ) ;
+    sh:ignoredProperties ( rdf:type owl:topDataProperty owl:topObjectProperty prov:wasInfluencedBy ) ;
     .
 
 
@@ -415,5 +446,42 @@ oquo:SymptomShape
     ] ;
     
     sh:closed true ;
+    sh:ignoredProperties ( rdf:type owl:topDataProperty owl:topObjectProperty ) ;
+    .
+
+
+oquo:ProvActivityShape
+    a sh:NodeShape ;
+    sh:targetClass prov:Activity ;  
+    sh:property [
+        sh:path prov:generated ;
+        sh:class prov:Entity ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path prov:wasAssociatedWith ;
+        sh:class prov:Agent ;
+        sh:severity sh:Violation ;
+    ] ;
+    
+    sh:closed false ;
+    sh:ignoredProperties ( rdf:type owl:topDataProperty owl:topObjectProperty ) ;
+    .
+
+oquo:ProvEntityShape
+    a sh:NodeShape ;
+    sh:targetClass prov:Entity ;  
+    sh:property [
+        sh:path prov:wasGeneratedBy ;
+        sh:class prov:Activity ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path prov:wasAttributedTo ;
+        sh:class prov:Agent ;
+        sh:severity sh:Violation ;
+    ] ;
+    
+    sh:closed false ;
     sh:ignoredProperties ( rdf:type owl:topDataProperty owl:topObjectProperty ) ;
     .
