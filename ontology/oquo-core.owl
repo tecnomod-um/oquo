@@ -20,13 +20,13 @@
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:QualityModel="http://purl.org/net/QualityModel#">
     <owl:Ontology rdf:about="https://purl.org/oquo-core">
-        <owl:versionIRI rdf:resource="https://purl.org/oquo-core/v2.2.0"/>
+        <owl:versionIRI rdf:resource="https://purl.org/oquo-core/v2.2.1"/>
         <dc:contributor rdf:resource="https://orcid.org/0000-0001-6233-6384"/>
-        <dc:contributor rdf:resource="https://orcid.org/0000-0003-3641-7548"/>
-        <dc:contributor rdf:resource="https://orcid.org/0000-0003-0201-3115"/>
-        <dc:contributor rdf:resource="https://orcid.org/0009-0008-4226-2582"/>
         <dc:contributor rdf:resource="https://orcid.org/0000-0002-7558-2880"/>
+        <dc:contributor rdf:resource="https://orcid.org/0000-0003-0201-3115"/>
         <dc:contributor rdf:resource="https://orcid.org/0000-0003-0487-308X"/>
+        <dc:contributor rdf:resource="https://orcid.org/0000-0003-3641-7548"/>
+        <dc:contributor rdf:resource="https://orcid.org/0009-0008-4226-2582"/>
         <dc:creator rdf:resource="https://orcid.org/0000-0003-0201-3115"/>
         <dc:description xml:lang="en">OQUO (Ontology QUality Ontology) is a framework-agnostic ontology for describing quality models for ontologies and the results of ontology quality evaluations in a common, machine-readable format. The OQUO core provides the general vocabulary needed to define quality models, consisting of quality characteristics and subcharacteristics, the metrics that measure them and the scales on which they are measured, together with the conversions between raw metric scales and the scales of quality models, which can be defined as cardinal to ordinal, cardinal to nominal, ordinal to ordinal and cardinal to cardinal mappings. It also represents the results of quality evaluations, including the observations made on the evaluated entities, the measured values, the evaluation context and configuration, and the issues detected, classified by severity and by non conformity. Specific quality models (e.g. OQuaRE or FAIR) are defined in separate modules that extend the core, and the metrics, raw scales and issue types of concrete evaluation frameworks are described in further modules that extend those quality models, so that the results of independently developed tools can be represented, compared and aggregated within a single model. OQUO reuses existing ontologies such as the Quality Model Ontology (QMO), the Evaluation Ontology (EVAL), the Extensible Observation Ontology (OBOE), and the Information Problem Ontology (IPO).</dc:description>
         <dc:publisher>Universidad de Murcia</dc:publisher>
@@ -36,6 +36,8 @@
         <vann:preferredNamespacePrefix>oquo</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>https://purl.org/oquo#</vann:preferredNamespaceUri>
     </owl:Ontology>
+    
+
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -236,6 +238,28 @@ We also have the outstanding issue of how to aim different definitions to differ
     
 
 
+    <!-- http://purl.org/dc/terms/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description">
+        <terms:description xml:lang="en">Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource.</terms:description>
+        <rdfs:comment xml:lang="en">An account of the resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+        <rdfs:label xml:lang="en">Description</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/isVersionOf -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/isVersionOf">
+        <terms:description xml:lang="en">Changes in version imply substantive changes in content rather than differences in format. This property is intended to be used with non-literal values. This property is an inverse property of Has Version.</terms:description>
+        <rdfs:comment xml:lang="en">A related resource of which the described resource is a version, edition, or adaptation.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+        <rdfs:label xml:lang="en">Is Version Of</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- http://purl.org/dc/terms/license -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license">
@@ -265,6 +289,15 @@ We also have the outstanding issue of how to aim different definitions to differ
     <owl:AnnotationProperty rdf:about="http://schema.org/codeRepository">
         <obo:IAO_0000115>Link to the repository where the un-compiled, human readable code and related code is located (SVN, GitHub, CodePlex).</obo:IAO_0000115>
         <rdfs:label>code repository</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://schema.org/softwareVersion -->
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/softwareVersion">
+        <rdfs:comment>Version of the software instance.</rdfs:comment>
+        <rdfs:label>softwareVersion</rdfs:label>
     </owl:AnnotationProperty>
     
 
@@ -1421,6 +1454,23 @@ prov:wasInfluencedBy should not be used without also using one of its subpropert
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Denotes a symbol of a unit of measure.</rdfs:comment>
         <rdfs:label>symbol</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#inXSDDateTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2006/time#inXSDDateTime">
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="es">Posición de un instante, expresado utilizando xsd:dateTime.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Position of an instant, expressed using xsd:dateTime</rdfs:comment>
+        <rdfs:label xml:lang="es">en fecha-tiempo XSD</rdfs:label>
+        <rdfs:label xml:lang="en">in XSD Date-Time</rdfs:label>
+        <skos:definition xml:lang="es">Posición de un instante, expresado utilizando xsd:dateTime.</skos:definition>
+        <skos:definition xml:lang="en">Position of an instant, expressed using xsd:dateTime</skos:definition>
+        <skos:note xml:lang="es">La propiedad &apos;en fecha-hora XSD&apos; ha sido reemplazada por &apos;en fecha-sello de tiempo XSD&apos; que hace obligatorio el campo &apos;huso horario&apos;.</skos:note>
+        <skos:note xml:lang="en">The property :inXSDDateTime is replaced by :inXSDDateTimeStamp which makes the time-zone field mandatory.</skos:note>
     </owl:DatatypeProperty>
     
 
