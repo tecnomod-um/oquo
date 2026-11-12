@@ -13,23 +13,27 @@
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:schema="http://schema.org/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:QualityModel="http://purl.org/net/QualityModel#">
     <owl:Ontology rdf:about="https://purl.org/oquo-oquare-qm">
-        <owl:versionIRI rdf:resource="https://purl.org/oquo-oquare-qm/v2.0.0"/>
+        <owl:versionIRI rdf:resource="https://purl.org/oquo-oquare-qm/v2.0.1"/>
         <owl:imports rdf:resource="https://purl.org/oquo-core"/>
         <dc:title xml:lang="en">OQUO OQuaRE quality model</dc:title>
         <dc:description xml:lang="en">OQUO module that defines the OQuaRE quality model for ontologies. OQuaRE adapts the SQuaRE (ISO/IEC 25000) standard for software product quality to ontologies, defining a set of quality characteristics, namely structural, functional adequacy, reliability, operability, maintainability, compatibility, transferability and quality in use, which are refined into subcharacteristics related through hasSubCharacteristic. The module also defines the OQuaRE five categories scale, an ordinal scale ranging from 1 (not acceptable) to 5 (exceeds the requirements) on which characteristics and subcharacteristics are measured. The module extends the OQUO core, and can in turn be extended by framework modules that define metrics associated with its characteristics and the conversions from their raw scales into the OQuaRE five categories scale.</dc:description>
         <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-10-29</terms:created>
         <terms:license rdf:resource="http://www.apache.org/licenses/LICENSE-2.0"/>
-        <dc:source xml:lang="en">Duque-Ramos, A., Fernández-Breis, J. T., Stevens, R., Aussenac-Gilles, N. (2011). OQuaRE: A SQuaRE-based approach for evaluating the quality of ontologies. Journal of Research and Practice in Information Technology, 43(2), 159-176.</dc:source>
-        <dc:creator>Francisco Abad-Navarro</dc:creator>
-        <dc:contributor>Francisco Abad-Navarro</dc:contributor>
-        <dc:contributor>Astrid Duque-Ramos</dc:contributor>
-        <dc:contributor>Belén Juanes-Cortes</dc:contributor>
-        <dc:contributor>Gonzalo Nicolas-Martinez</dc:contributor>
-        <dc:contributor>Manuel Quesada-Martinez</dc:contributor>
-        <dc:contributor>Jesualdo Tomas Fernandez-Breis</dc:contributor>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
+        <foaf:homepage rdf:resource="https://github.com/tecnomod-um/oquare"/>
+        <schema:codeRepository rdf:resource="https://github.com/tecnomod-um/oquo"/>
+        <dc:creator rdf:resource="https://orcid.org/0000-0003-0201-3115"/>
+        <dc:contributor rdf:resource="https://orcid.org/0000-0003-0201-3115"/>
+        <dc:contributor rdf:resource="https://orcid.org/0000-0001-6233-6384"/>
+        <dc:contributor rdf:resource="https://orcid.org/0000-0003-3641-7548"/>
+        <dc:contributor rdf:resource="https://orcid.org/0009-0008-4226-2582"/>
+        <dc:contributor rdf:resource="https://orcid.org/0000-0003-0487-308X"/>
+        <dc:contributor rdf:resource="https://orcid.org/0000-0002-7558-2880"/>
         <dc:publisher>Universidad de Murcia</dc:publisher>
         <vann:preferredNamespacePrefix>oquo-oquare-qm</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>https://purl.org/oquo-oquare-qm#</vann:preferredNamespaceUri>
@@ -52,6 +56,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#AdaptabilityCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">The degree to which The ontology can be adapted for different specified environments (languages, expresivity levels) without applying actions or means other than those provided for this purpose for the Ontology considered.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>adaptability characteristic</rdfs:label>
     </owl:Class>
     
@@ -62,6 +67,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#AnalysabilityCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">The degree to which The ontology can be diagnosed for deficiencies or causes of failures (inconsistences), or for the parts to be modified to be identified.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>analysability characteristic</rdfs:label>
     </owl:Class>
     
@@ -72,6 +78,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#AppropriatenessRecognisabilityCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">The degree to which the Ontology enables users to recognise whether it is appropriate for their needs.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>appropriateness recognisability characteristic</rdfs:label>
     </owl:Class>
     
@@ -82,6 +89,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#AvailabilityCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">The degree to which an ontology, or part of it, is operational and available when required for use with different applications.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label xml:lang="en">availability characteristic</rdfs:label>
     </owl:Class>
 
@@ -91,6 +99,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#ChangeabilityCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">The degree to which The Ontology enables a specified modification to be implemented. The ease with which a The ontology can be modified.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>changeability characteristic</rdfs:label>
     </owl:Class>
     
@@ -101,6 +110,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#ClassifyingInstancesCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">Degree in which ontology Instances can be recognized as member of a certain class.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>classifying instances characteristic</rdfs:label>
     </owl:Class>
     
@@ -111,6 +121,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#ClusteringCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">Degree in which the annotations of data with respect to ontology terms can be used for clustering such data against the aspects of the ontology.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>clustering characteristic</rdfs:label>
     </owl:Class>
     
@@ -121,6 +132,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#CognitiveSatisfactionCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">Cognitive satisfaction</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <oboInOwl:hasExactSynonym xml:lang="en">Likability characteristic</oboInOwl:hasExactSynonym>
         <rdfs:label>cognitive satisfaction characteristic</rdfs:label>
     </owl:Class>
@@ -132,6 +144,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#CohesionCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">An ontology has a high cohesion if the classes are strongly related.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>cohesion characteristic</rdfs:label>
     </owl:Class>
     
@@ -167,6 +180,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 xml:lang="en">The ability of two or more software components to exchange information and/or to perform their required functions while sharing the same hardware or software environment.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>compatibility characteristic</rdfs:label>
     </owl:Class>
     
@@ -177,6 +191,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#ConsistencyCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">Degree of the consistency of the ontology.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>consistency characteristic</rdfs:label>
     </owl:Class>
     
@@ -187,6 +202,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#ConsistentSearchAndQueryCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">The degree which the formal model and structure of the ontology provide a semantic context to evaluate which are the data wanted by the users, allowing better querying and searching methods.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>consistent search and query characteristic</rdfs:label>
     </owl:Class>
     
@@ -197,6 +213,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#ContextConformityInUseCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">The degree to which usability in use meets requirements in all the intended contexts of use.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>context conformity in use characteristic</rdfs:label>
     </owl:Class>
     
@@ -207,6 +224,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#ContextExtendibilityInUseCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">The degree of usability in use in contexts beyond those initially intended.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>context extendibility in use characteristic</rdfs:label>
     </owl:Class>
     
@@ -217,6 +235,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#ControlledVocabularyCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">Capability of the ontology to avoid heterogeneity of the terms.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>controlled vocabulary characteristic</rdfs:label>
     </owl:Class>
     
@@ -227,6 +246,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#CyclesCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">The existence of cycles through a particular semantic relation is usually a sign of bad design, since they may lead to inconsistencies.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>cycles characteristic</rdfs:label>
     </owl:Class>
     
@@ -237,6 +257,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#DecisionTreesCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">Capability of the ontology to be used building Decision trees.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>decision trees characteristic</rdfs:label>
     </owl:Class>
     
@@ -247,6 +268,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#DomainCoverageCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">The degree to which The ontology cover the specified domain</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>domain coverage characteristic</rdfs:label>
     </owl:Class>
     
@@ -257,6 +279,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#EaseOfUseCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">The degree to which the ontology makes it easy for users to operate and control it.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>ease of use characteristic</rdfs:label>
     </owl:Class>
     
@@ -267,6 +290,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#EffectivenessInUseCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">The degree to which specified users can achieve specified goals with accuracy and completeness in a specified context of use.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>effectiveness in use characteristic</rdfs:label>
     </owl:Class>
     
@@ -277,6 +301,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#EfficiencyInUseCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">The degree to which specified users expend appropriate amounts of resources in relation to the effectiveness achieved in a specified context of use.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>efficiency in use characteristic</rdfs:label>
     </owl:Class>
     
@@ -287,6 +312,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#EmotionalSatisfactionCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">Emotional satisfaction</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <oboInOwl:hasExactSynonym xml:lang="en">Pleasure characteristic</oboInOwl:hasExactSynonym>
         <rdfs:label>emotional satisfaction characteristic</rdfs:label>
     </owl:Class>
@@ -323,6 +349,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label>flexibility in use characteristic</rdfs:label>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
     </owl:Class>
     
 
@@ -332,6 +359,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#FormalRelationSupportCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">Capability of the ontology to represent relations supported for formal theories different to the formal support for taxonomy.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>formal relation support characteristic</rdfs:label>
     </owl:Class>
     
@@ -342,6 +370,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#FormalisationCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">Capability of the ontology to support reasoning</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>formalisation characteristic</rdfs:label>
     </owl:Class>
     
@@ -475,6 +504,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 xml:lang="en">The capability of the ontologies to provide concrete functions.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>functional adequacy characteristic</rdfs:label>
     </owl:Class>
     
@@ -485,6 +515,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#GuidanceCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">Capability of the ontology to guide the specification of domain theories.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>guidance characteristic</rdfs:label>
     </owl:Class>
     
@@ -495,6 +526,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#HelpfulnessCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">The degree to which the Ontology provides help when users need assistance.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>helpfulness characteristic</rdfs:label>
     </owl:Class>
     
@@ -505,6 +537,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#IndexingAndLinkingCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">Degree in which the classes defined in the ontology can act as indexes for quick information retrieval.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>indexing and linking characteristic</rdfs:label>
     </owl:Class>
     
@@ -515,6 +548,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#InferenceCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">The degree to which The formal model of the ontology can be used by reasoners to make implicit knowledge explicit.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>inference characteristic</rdfs:label>
     </owl:Class>
     
@@ -527,6 +561,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#InteroperabilityCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">The degree to which the ontology can be cooperatively operable combining its knowledge with one or more other ontologies.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>interoperability characteristic</rdfs:label>
     </owl:Class>
     
@@ -540,6 +575,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#KnowledgeAcquisitionRepresentationCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">Capability of the Ontology to represent the knowledge acquired.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>knowledge acquisition representation characteristic</rdfs:label>
     </owl:Class>
     
@@ -550,6 +586,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#KnowledgeReuseCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">The degree to which The ontology knowledge can be used to build other ontologies.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>knowledge reuse characteristic</rdfs:label>
     </owl:Class>
     
@@ -560,6 +597,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#LearnabilityCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">The degree to which the ontology enables users to learn its application.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>learnability characteristic</rdfs:label>
     </owl:Class>
     
@@ -623,6 +661,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 xml:lang="en">The capability of ontologies to be modified for changes in environments, in requirements or in functional specifications.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>maintainability characteristic</rdfs:label>
     </owl:Class>
     
@@ -636,6 +675,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#ModificationStabilityCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">The degree to which The ontology can avoid unexpected effects from modifications of the software or knowledge.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>modification stability characteristic</rdfs:label>
     </owl:Class>
     
@@ -646,6 +686,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#ModularityCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">The degree to which the ontology is composed of discrete components such that a change to one component has minimal impact on other components.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>modularity characteristic</rdfs:label>
     </owl:Class>
     
@@ -695,6 +736,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 xml:lang="en">Effort needed for use, and on the individual assessment of such use, by a stated or implied set of users.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>operability characteristic</rdfs:label>
     </owl:Class>
     
@@ -726,6 +768,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#PhysicalSatisfactionCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">Physical satisfaction</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <oboInOwl:hasExactSynonym xml:lang="en">Comfort characteristic</oboInOwl:hasExactSynonym>
         <rdfs:label>physical satisfaction characteristic</rdfs:label>
     </owl:Class>
@@ -737,6 +780,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#PortabilityCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">The degree in which an Ontology or one part of the ontology can be transferred from one hardware or software environment to another.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>portability characteristic</rdfs:label>
     </owl:Class>
     
@@ -747,6 +791,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#PrecisionCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">The degree to which The ontology provides the right or specified results with the needed degree of accuracy.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>precision characteristic</rdfs:label>
     </owl:Class>
     
@@ -782,6 +827,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 xml:lang="en">Quality in a particular context of use. Quality in use is the degree to which a product used by specific users meets their needs to achieve specific goals.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>quality in use characteristic</rdfs:label>
     </owl:Class>
 
@@ -791,6 +837,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#RecoverabilityCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">The degree to which the ontology can reestablish a specified level of performance and recover the data directly affected in the case of a failure.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label xml:lang="en">recoverability characteristic</rdfs:label>
     </owl:Class>
     
@@ -801,6 +848,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#RedundancyCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">Capability of the ontology to be informative</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>redundancy characteristic</rdfs:label>
     </owl:Class>
     
@@ -811,6 +859,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#ReferenceOntologyCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">Degree in which the ontology can be used as a reference resource for the particular domain the ontology is built for.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>reference ontology characteristic</rdfs:label>
     </owl:Class>
     
@@ -833,6 +882,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 xml:lang="en">Capability of an ontology to maintain its level of performance under stated conditions for a given period of time.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>reliability characteristic</rdfs:label>
     </owl:Class>
     
@@ -843,6 +893,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#ReplaceabilityCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">The degree to which The ontology can be used in place of another specified Ontology for the same purpose in the same environment.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>replaceability characteristic</rdfs:label>
     </owl:Class>
     
@@ -853,6 +904,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#ResultsRepresentationCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">Capability of the ontology to analize complex results such as microarrays experiments.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>results representation characteristic</rdfs:label>
     </owl:Class>
     
@@ -863,6 +915,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#ReusabilityCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">The degree to which an asset (part of) the ontology can be used in more than one ontology, or in building other assets.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>reusability characteristic</rdfs:label>
     </owl:Class>
     
@@ -905,6 +958,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 xml:lang="en">The degree to which users are satisfied in a especified context of use.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>satisfaction in use characteristic</rdfs:label>
     </owl:Class>
     
@@ -914,6 +968,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#SchemaAndValueReconciliationCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">Degree in which ontology provide a common data model that can be applied to reconciliation and integration.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>schema and value reconciliation characteristic</rdfs:label>
     </owl:Class>
     
@@ -924,6 +979,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#SimilarityCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">Capability of the component of the ontology to be compared for similarity.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>similarity characteristic</rdfs:label>
     </owl:Class>
     
@@ -934,6 +990,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#StructuralAccuracyCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">Degree of the correctness of the terms used in the ontology.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>structural accuracy characteristic</rdfs:label>
     </owl:Class>
     
@@ -1018,6 +1075,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 xml:lang="en">The structural characteristic accounts for ontology quality factors such as consistency, formalisation, redundancy or tangledness.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>structural characteristic</rdfs:label>
     </owl:Class>
     
@@ -1028,6 +1086,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#TanglednessCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">This measures the distribution of multiple parent categories, so that it is related to the existence of multiple inheritance.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>tangledness characteristic</rdfs:label>
     </owl:Class>
     
@@ -1038,6 +1097,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#TestabilityCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">The degree to which the ontology modified can be validated.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>testability characteristic</rdfs:label>
     </owl:Class>
     
@@ -1048,6 +1108,7 @@
     <owl:Class rdf:about="https://purl.org/oquo-oquare-qm#TextAnalysisCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/QualityModel#QualityCharacteristic"/>
         <obo:IAO_0000115 xml:lang="en">Capability of the structure of the ontology to helps detecting associations between words or concepts and classifying word types.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>text analysis characteristic</rdfs:label>
     </owl:Class>
     
@@ -1083,6 +1144,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 xml:lang="en">The degree to which the software product can be transferred from one environment to another.</obo:IAO_0000115>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
         <rdfs:label>transferability characteristic</rdfs:label>
     </owl:Class>
     
@@ -1125,6 +1187,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label>usability in use characteristic</rdfs:label>
+        <dc:source rdf:resource="https://doi.org/10.3316/informit.265844843145749"/>
     </owl:Class>
     
 
