@@ -9,9 +9,9 @@ QASAR consolidates four independently developed frameworks —OQuaRE, HURON, Ont
 This page describes the modular architecture of OQUO-QASAR and its modules, with examples of the RDF produced when each framework's metrics are applied to real ontologies.
 
 
-The OQUO-QASAR ontology is composed by 5 modules that follows the architecture described in the next figure:
+The OQUO-QASAR ontology is composed by 6 modules that follows the architecture described in the next figure:
 
-<img src="../assets/oquo_imports-oquo-qasar.png" width="600">
+<img src="../assets/oquo_modules.png" width="600">
 
 ## Modules
 

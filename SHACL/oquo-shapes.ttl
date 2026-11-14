@@ -5,7 +5,7 @@
 @prefix oquo:  <https://purl.org/oquo#> .
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
 @prefix qm:    <http://purl.org/net/QualityModel#> .
-@prefix res:   <http://purl.org/net/EvaluationResult#> .
+@prefix eval:   <http://purl.org/net/EvaluationResult#> .
 @prefix time:  <http://www.w3.org/2006/time#> .
 @prefix oboe:  <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#> .
 @prefix btl2:  <http://purl.org/biotop/btl2.owl#> .
@@ -17,16 +17,16 @@
 
 oquo:EvaluationShape
     a sh:NodeShape ;
-    sh:targetClass res:Evaluation ;  # Applies to all evaluations
+    sh:targetClass eval:Evaluation ;  # Applies to all evaluations
     sh:property [
-        sh:path res:evaluatedSubject ;       
+        sh:path eval:evaluatedSubject ;       
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:class res:EvaluationSubject ;
+        sh:class eval:EvaluationSubject ;
         sh:severity sh:Violation ;
     ] ;
     sh:property [
-        sh:path res:evaluatedSubject ;       
+        sh:path eval:evaluatedSubject ;       
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:class oboe:Entity ;
@@ -40,9 +40,9 @@ oquo:EvaluationShape
         sh:severity sh:Violation ;
     ] ;
     sh:property [
-        sh:path res:inputData ;       # constrains the values of res:inputData
+        sh:path eval:inputData ;       # constrains the values of eval:inputData
         sh:minCount 1 ;
-        sh:class res:EvaluationData;
+        sh:class eval:EvaluationData;
         sh:severity sh:Violation ;
     ] ;
 
@@ -55,8 +55,8 @@ oquo:EvaluationShape
     ] ;
     
     sh:property [ 
-        sh:path res:producedQualityValue ;
-        sh:class res:QualityValue ;
+        sh:path eval:producedQualityValue ;
+        sh:class eval:QualityValue ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:severity sh:Violation ;
@@ -104,25 +104,25 @@ oquo:InstantShape
 
 oquo:QualityValueShape
     a sh:NodeShape ;
-    sh:targetClass res:QualityValue ;  
+    sh:targetClass eval:QualityValue ;  
     sh:property [
-        sh:path res:hasLiteralValue ;       
+        sh:path eval:hasLiteralValue ;       
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:severity sh:Violation ;
     ] ;
     
     sh:property [
-        sh:path res:isMeasuredOnScale ;       
+        sh:path eval:isMeasuredOnScale ;       
         sh:minCount 1 ;
         sh:class om:Measurement_scale ;
         sh:severity sh:Violation ;
     ] ;
     
     sh:property [
-        sh:path res:obtainedFrom ;       
+        sh:path eval:obtainedFrom ;       
         sh:minCount 1 ;
-        sh:class res:Evaluation ;
+        sh:class eval:Evaluation ;
         sh:severity sh:Violation ;
     ] ;
 
@@ -132,7 +132,7 @@ oquo:QualityValueShape
     ] ;
     
     sh:property [
-        sh:path res:forMeasure ;       
+        sh:path eval:forMeasure ;       
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:class qm:QualityMeasure ;
@@ -233,7 +233,7 @@ oquo:ObservationShape
         sh:path oboe:ofEntity ;       
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:class res:EvaluationSubject ;
+        sh:class eval:EvaluationSubject ;
         sh:severity sh:Violation ;
     ] ;
     sh:property [
@@ -283,7 +283,7 @@ oquo:MeasurementShape
         sh:path oboe:hasValue ;       
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:class res:QualityValue ;
+        sh:class eval:QualityValue ;
         sh:severity sh:Violation ;
     ] ;
     sh:property [
@@ -302,7 +302,7 @@ oquo:MeasuredValueShape
     a sh:NodeShape ;
     sh:targetClass oboe:MeasuredValue ;  
     sh:property [
-        sh:path res:hasLiteralValue ;       
+        sh:path eval:hasLiteralValue ;       
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:severity sh:Violation ;
@@ -314,21 +314,21 @@ oquo:MeasuredValueShape
     ] ;
     
     sh:property [
-        sh:path res:isMeasuredOnScale ;       
+        sh:path eval:isMeasuredOnScale ;       
         sh:minCount 1 ;
         sh:class om:Measurement_scale ;
         sh:severity sh:Violation ;
     ] ;
     
     sh:property [
-        sh:path res:obtainedFrom ;
+        sh:path eval:obtainedFrom ;
         sh:minCount 1 ;
-        sh:class res:Evaluation ;
+        sh:class eval:Evaluation ;
         sh:severity sh:Violation ;
     ] ;
     
     sh:property [
-        sh:path res:forMeasure ;       
+        sh:path eval:forMeasure ;       
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:class qm:QualityMeasure ;
@@ -420,7 +420,7 @@ oquo:SymptomShape
         sh:path oboe:ofEntity ;       
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:class res:EvaluationSubject ;
+        sh:class eval:EvaluationSubject ;
         sh:severity sh:Violation ;
     ] ;
     sh:property [
