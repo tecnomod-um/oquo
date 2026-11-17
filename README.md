@@ -1,7 +1,7 @@
 # Ontology QUality Ontology (OQUO)
-The Ontology QUality Ontology (OQUO - [https://purl.org/oquo-core](https://purl.org/oquo-core)) is a modular ontology that contains the semantic definitions to represent quality models based on metrics, characteristics and subcharacteristics; in addition to the entities needed to represent ontology evaluations.
+The Ontology QUality Ontology (OQUO - [https://purl.org/oquo-core](https://purl.org/oquo-core)) lets you publish ontology evaluation results as linked data and compare or combine results from different evaluation frameworks. OQUO is a modular ontology that contains the semantic definitions to represent quality models based on metrics, characteristics and subcharacteristics; in addition to the entities needed to represent ontology evaluations.
 
-OQUO ([https://purl.org/oquo-core](https://purl.org/oquo-core)) contains the common entities needed to represent quality models and evaluations. the module oquo-core is the result of reusing and aligning 5 different ontologies:
+OQUO ([https://purl.org/oquo-core](https://purl.org/oquo-core)) contains the common entities needed to represent quality models and evaluations. The module oquo-core is the result of reusing and aligning 5 different ontologies:
 
   - The Quality Model Ontology - [http://purl.org/net/QualityModel](http://purl.org/net/QualityModel)
   - The Evaluation Result Ontology - [http://purl.org/net/EvaluationResult](http://purl.org/net/EvaluationResult)
@@ -10,7 +10,7 @@ OQUO ([https://purl.org/oquo-core](https://purl.org/oquo-core)) contains the com
   - The PROV Ontology (PROV-O), the W3C recommendation for provenance - [http://www.w3.org/ns/prov#](https://www.w3.org/TR/prov-o/)
 
 
-The OQUO model can be used for defining and integrating quality models that combines metrics from different quality evaluation frameworks. We provide an example of how to use [OQUO for that purpose in QASAR, a tool for ontology quality assurance](./oquo-qasar/README.md).
+The OQUO model can be used for defining and integrating quality models that combine metrics from different quality evaluation frameworks. We provide an example of how to use [OQUO for that purpose in QASAR, a tool for ontology quality assurance](./oquo-qasar/README.md).
 
 ## Provenance
 
@@ -83,7 +83,7 @@ OQUO represents each quality measurement as an observation that links the evalua
 
 ### Adding scale conversions to OQUO modules
 
-- **[oquo-scale-conversion-creator](https://github.com/tecnomod-um/oquo-scale-conversion-creator)**: command-line Java tool, built on the [OWL API](https://github.com/owlcs/owlapi), that adds scale conversions to OQUO-based modules, such as [oquo-huron](https://purl.org/oquo-huron), from a TSV file. Each row maps the raw values of a metric to the five categories of the OQuaRE scale (`oquo:OquareFiveCategoriesScale`). For ratio input scales, each category is given as an interval of raw values, and the tool creates an `oquo:CardinalToOrdinalScaleConversion`. For ordinal input scales, each category is given as an input scale item, and the tool creates an `oquo:OrdinalToOrdinalScaleConversion`. In both cases it also creates the corresponding point mappings. Rows are validated before the ontology is modified, and the `--overwrite-scales` option replaces any existing conversion between the same input and output scales. Optionally, the tool can also create missing metrics and input scales. Requires Java 17 or later.
+- **[oquo-scale-conversion-creator](https://github.com/tecnomod-um/oquo-scale-conversion-creator)**: command-line Java tool, built on the [OWL API](https://github.com/owlcs/owlapi), that adds scale conversions to OQUO-based modules, such as [oquo-huron](https://purl.org/oquo-huron), from a TSV file. Each row maps the raw values of a metric to the five categories of the OQuaRE scale (`oquo-oquare-qm:OquareFiveCategoriesScale`), that belongs to the [oquare quality model oquo module (oquo-oquare-qm)](./ontology/quality_models/oquo-oquare-qm.owl). For ratio input scales, each category is given as an interval of raw values, and the tool creates an `oquo:CardinalToOrdinalScaleConversion`. For ordinal input scales, each category is given as an input scale item, and the tool creates an `oquo:OrdinalToOrdinalScaleConversion`. In both cases it also creates the corresponding point mappings. Rows are validated before the ontology is modified, and the `--overwrite-scales` option replaces any existing conversion between the same input and output scales. Optionally, the tool can also create missing metrics and input scales. Requires Java 17 or later.
 
 ### Validating OQUO evaluation results
 
@@ -94,7 +94,7 @@ OQUO represents each quality measurement as an observation that links the evalua
 
 OQUO declares a set of annotation properties for recording the provenance of any of its elements (ontologies, characteristics, metrics, scales, issues…) and tracing them to their sources: publications, authors, web pages and code. They are reused from standard vocabularies and, being annotations, they do not affect reasoning. Ontologies that extend OQUO use them as they need.
 
-PROV-O, used for the [provenance of evaluation results](#provenance), does not provide properties for bibliographic and descriptive metadata, such as the DOI of a publication, a web page or a code repository. For creators and sources, the annotation properties below are the Dublin Core terms that the W3C [Dublin Core to PROV mapping](https://www.w3.org/TR/prov-dc/) relates to PROV-O.
+PROV-O, used for the [provenance of evaluation results](#provenance), does not provide properties for bibliographic and descriptive metadata, such as the DOI of a publication, a web page or a code repository. The annotation properties below are the Dublin Core terms recommended for describing creators and sources.
 
 | Metadata | Annotation property | Value |
 |---|---|---|
