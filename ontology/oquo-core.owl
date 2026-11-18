@@ -20,7 +20,7 @@
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:QualityModel="http://purl.org/net/QualityModel#">
     <owl:Ontology rdf:about="https://purl.org/oquo-core">
-        <owl:versionIRI rdf:resource="https://purl.org/oquo-core/v2.2.1"/>
+        <owl:versionIRI rdf:resource="https://purl.org/oquo-core/v2.2.2"/>
         <dc:contributor rdf:resource="https://orcid.org/0000-0001-6233-6384"/>
         <dc:contributor rdf:resource="https://orcid.org/0000-0002-7558-2880"/>
         <dc:contributor rdf:resource="https://orcid.org/0000-0003-0201-3115"/>
@@ -678,6 +678,24 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
     
 
 
+    <!-- http://purl.obolibrary.org/obo/IAO_0000136 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000136">
+        <obo:IAO_0000112 xml:lang="en">This document is about information artifacts and their representations</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
+        <obo:IAO_0000115 xml:lang="en">A (currently) primitive relation that relates an information artifact to an entity.</obo:IAO_0000115>
+        <obo:IAO_0000116 xml:lang="en">7/6/2009 Alan Ruttenberg. Following discussion with Jonathan Rees, and introduction of &quot;mentions&quot; relation. Weaken the is_about relationship to be primitive. 
+
+We will try to build it back up by elaborating the various subproperties that are more precisely defined.
+
+Some currently missing phenomena that should be considered &quot;about&quot; are predications - &quot;The only person who knows the answer is sitting beside me&quot; , Allegory, Satire, and other literary forms that can be topical without explicitly mentioning the topic.</obo:IAO_0000116>
+        <obo:IAO_0000117 xml:lang="en">person:Alan Ruttenberg</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">Smith, Ceusters, Ruttenberg, 2000 years of philosophy</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">is about</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.org/ipo/core#assetOf -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/ipo/core#assetOf">
@@ -852,6 +870,7 @@ A Symptom may indicate many Issues, such as a Symptom of fever can indicate many
     <!-- http://purl.org/net/EvaluationResult#obtainedFrom -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/net/EvaluationResult#obtainedFrom">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasGeneratedBy"/>
         <rdfs:domain rdf:resource="http://purl.org/net/EvaluationResult#QualityValue"/>
         <rdfs:range rdf:resource="http://purl.org/net/EvaluationResult#Evaluation"/>
         <rdfs:comment>Denotes a quality evaluation from which a quality value is obtained.</rdfs:comment>
@@ -874,6 +893,7 @@ A Symptom may indicate many Issues, such as a Symptom of fever can indicate many
     <!-- http://purl.org/net/EvaluationResult#producedQualityValue -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/net/EvaluationResult#producedQualityValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#generated"/>
         <rdfs:domain rdf:resource="http://purl.org/net/EvaluationResult#Evaluation"/>
         <rdfs:range rdf:resource="http://purl.org/net/EvaluationResult#QualityValue"/>
         <rdfs:comment>Denotes a quality value produced in a quality evaluation.</rdfs:comment>
@@ -1123,6 +1143,22 @@ A Symptom may indicate many Issues, such as a Symptom of fever can indicate many
         <prov:inverse>contributed</prov:inverse>
         <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
         <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#qualifiedAttribution"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasDerivedFrom -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasDerivedFrom">
+        <rdfs:comment xml:lang="en">The more specific subproperties of prov:wasDerivedFrom (i.e., prov:wasQuotedFrom, prov:wasRevisionOf, prov:hadPrimarySource) should be used when applicable.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>wasDerivedFrom</rdfs:label>
+        <prov:category>starting-point</prov:category>
+        <prov:component>derivations</prov:component>
+        <prov:definition xml:lang="en">A derivation is a transformation of an entity into another, an update of an entity resulting in a new one, or the construction of a new entity based on a pre-existing entity.</prov:definition>
+        <prov:inverse>hadDerivation</prov:inverse>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#Derivation"/>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#qualifiedDerivation"/>
     </owl:ObjectProperty>
     
 

@@ -115,6 +115,7 @@ oquo:QualityValueShape
     sh:property [
         sh:path eval:isMeasuredOnScale ;       
         sh:minCount 1 ;
+        sh:maxCount 1 ;
         sh:class om:Measurement_scale ;
         sh:severity sh:Violation ;
     ] ;
@@ -146,6 +147,19 @@ oquo:QualityValueShape
     ] ;
     sh:property [
         sh:path prov:wasAttributedTo ;
+        sh:severity sh:Violation ;
+    ] ;
+
+    sh:property [
+        sh:path iao:0000136 ;
+        sh:maxCount 1 ;
+        sh:class om:Measurement_scale_category ;
+        sh:severity sh:Violation ;
+    ] ;
+    
+    sh:property [
+        sh:path prov:wasDerivedFrom ;
+        sh:class eval:QualityValue ;
         sh:severity sh:Violation ;
     ] ;
     
@@ -316,6 +330,7 @@ oquo:MeasuredValueShape
     sh:property [
         sh:path eval:isMeasuredOnScale ;       
         sh:minCount 1 ;
+        sh:maxCount 1 ;
         sh:class om:Measurement_scale ;
         sh:severity sh:Violation ;
     ] ;
@@ -340,8 +355,22 @@ oquo:MeasuredValueShape
         sh:maxCount 1 ;
         sh:severity sh:Violation ;
     ] ;
+    
     sh:property [
         sh:path prov:wasAttributedTo ;
+        sh:severity sh:Violation ;
+    ] ;
+    
+        sh:property [
+        sh:path iao:0000136 ;
+        sh:maxCount 1 ;
+        sh:class om:Measurement_scale_category ;
+        sh:severity sh:Violation ;
+    ] ;
+    
+    sh:property [
+        sh:path prov:wasDerivedFrom ;
+        sh:class eval:QualityValue ;
         sh:severity sh:Violation ;
     ] ;
     
