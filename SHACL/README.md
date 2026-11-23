@@ -55,7 +55,7 @@ Quality values obtained by applying a scale conversion of an OQUO module to anot
 
 | Shape | Target class | Closed | Constraints |
 |---|---|:-:|---|
-| `oquo:MeasurementScaleShape` | `om:Measurement_scale` | no | Exactly one `qm:hasRankigFunction`, either `qm:HigherBest` or `qm:LowerBest`. At least one definition (`obo:IAO_0000115`) and one `rdfs:label`, of type `xsd:string`. |
+| `oquo:MeasurementScaleShape` | `om:Measurement_scale` | no | Exactly one `qm:hasRankigFunction`, either `qm:HigherBest` or `qm:LowerBest`. At least one definition (`obo:IAO_0000115`) and one `rdfs:label`, of type `xsd:string` or `rdf:langString` (with a language tag, e.g. `"…"@en`). |
 | `oquo:OrdinalScaleShape` | `om:Ordinal_scale` | no | Same as `MeasurementScaleShape`, plus at least two `om:element` (`om:Ordered_measurement_scale_category`). |
 
 These shapes apply to the scales defined in the OQUO modules, so they are only checked when the modules are part of the validated graph.
@@ -64,7 +64,7 @@ These shapes apply to the scales defined in the OQUO modules, so they are only c
 
 | Shape | Target class | Closed | Constraints |
 |---|---|:-:|---|
-| `oquo:IssueShape` | `ipo:Issue` | yes | At least one `ipo:indicatedBy` (`ipo:Symptom`), one `ipo:hasHostAsset` and one `ipo:hasAsset` (`ipo:Asset`). Exactly one `rdfs:comment` of type `xsd:string`. |
+| `oquo:IssueShape` | `ipo:Issue` | yes | At least one `ipo:indicatedBy` (`ipo:Symptom`), one `ipo:hasHostAsset` and one `ipo:hasAsset` (`ipo:Asset`). Any number of `ipo:hasCausativeAsset` (`ipo:Asset`). Exactly one `rdfs:comment`, of type `xsd:string` or `rdf:langString`. |
 | `oquo:SymptomShape` | `ipo:Symptom` | yes | At least one `ipo:indicates` (`ipo:Issue`). Exactly one `oboe:ofEntity` (an `oboe:Entity`, `eval:EvaluationSubject` and `ipo:Asset`), one `oboe:hasMeasurement` (`oboe:Measurement`) and one `time:hasTime` (`time:Instant`). |
 | `oquo:AssetShape` | `ipo:Asset` | no | At least one `ipo:hostAssetOf` (`ipo:Issue`). Open, because an asset can be any entity, with any properties. |
 
@@ -83,6 +83,8 @@ The PROV-O shapes are open, because anything can be a `prov:Activity` or a `prov
 
 ```turtle
 @prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix oquo:  <https://purl.org/oquo#> .
 @prefix eval:  <http://purl.org/net/EvaluationResult#> .
 @prefix qm:    <http://purl.org/net/QualityModel#> .

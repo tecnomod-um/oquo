@@ -183,13 +183,13 @@ oquo:MeasurementScaleShape
     sh:property [
         sh:path iao:0000115 ;       
         sh:minCount 1 ;
-        sh:datatype xsd:string ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
         sh:severity sh:Violation ;
     ] ;
     sh:property [
         sh:path rdfs:label ;       
         sh:minCount 1 ;
-        sh:datatype xsd:string ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
         sh:severity sh:Violation ;
     ] ;
 
@@ -212,13 +212,13 @@ oquo:OrdinalScaleShape
     sh:property [
         sh:path iao:0000115 ;       
         sh:minCount 1 ;
-        sh:datatype xsd:string ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
         sh:severity sh:Violation ;
     ] ;
     sh:property [
         sh:path rdfs:label ;       
         sh:minCount 1 ;
-        sh:datatype xsd:string ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
         sh:severity sh:Violation ;
     ] ;
     sh:property [
@@ -427,7 +427,7 @@ oquo:IssueShape
         sh:path rdfs:comment ;       
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:datatype xsd:string ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
         sh:severity sh:Violation ;
     ] ;
     
