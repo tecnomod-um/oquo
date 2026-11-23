@@ -416,6 +416,12 @@ oquo:IssueShape
         sh:class ipo:Asset ;
         sh:severity sh:Violation ;
     ] ;
+
+    sh:property [
+        sh:path ipo:hasCausativeAsset ;
+        sh:class ipo:Asset ;
+        sh:severity sh:Violation ;
+    ] ;
     
     sh:property [
         sh:path rdfs:comment ;       
